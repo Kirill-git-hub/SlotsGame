@@ -147,11 +147,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 49578470}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 838cff74101cfb64f9e844736c722332, type: 3}
+  m_Script: {fileID: 11500000, guid: e65dd2c233a0b574fbf4e420f7f5958c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startButton: {fileID: 1275176487}
-  sceneName: GamePlay
+  startGameButton: {fileID: 1275176487}
 --- !u!4 &49578472
 Transform:
   m_ObjectHideFlags: 0
