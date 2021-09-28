@@ -31,6 +31,7 @@ public class PopupController : MonoBehaviour
 
     public void InstantiatePausePopup()
     {
+        MainApp.instance.GameController.GameView.RemoveListener();
         Debug.Log("зашел в метод активировать панель паузы");
         GameObject popupCopy = Instantiate(this.pausePopup.gameObject, popupCanvas);
         PausePopup pausePopup = popupCopy.GetComponent<PausePopup>();

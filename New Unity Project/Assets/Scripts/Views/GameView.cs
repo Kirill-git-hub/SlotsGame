@@ -13,4 +13,9 @@ public class GameView : MonoBehaviour
         pauseButton.onClick.AddListener(PopupController.instance.InstantiatePausePopup);
         Debug.Log("прикрепил ивент активировать панель паузы");
     }
+
+    public void RemoveListener()
+    {
+        pauseButton.onClick.RemoveListener(PopupController.instance.InstantiatePausePopup);
+    }
 }
