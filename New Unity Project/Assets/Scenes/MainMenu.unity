@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 49578472}
   - component: {fileID: 49578471}
   m_Layer: 0
-  m_Name: MainMenuController
+  m_Name: MainMenuView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -671,7 +671,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1638365438}
   - component: {fileID: 1638365437}
-  - component: {fileID: 1638365436}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -679,14 +678,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1638365436
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1638365435}
-  m_Enabled: 1
 --- !u!20 &1638365437
 Camera:
   m_ObjectHideFlags: 0
@@ -715,7 +706,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 10
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
