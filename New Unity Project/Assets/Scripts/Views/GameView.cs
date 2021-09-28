@@ -9,6 +9,7 @@ public class GameView : MonoBehaviour
 
     private void Start()
     {
+        MainApp.instance.GameController.GameView = this;
         pauseButton.onClick.AddListener(PopupController.instance.InstantiatePausePopup);
         Debug.Log("прикрепил ивент активировать панель паузы");
     }
