@@ -21,6 +21,13 @@ public class MainApp : MonoBehaviour
     }
 
     private MainMenuController mainMenuController;
+    private GameController gameController;
 
     public MainMenuController MainMenuController { get => mainMenuController; set => mainMenuController = value; }
+    public GameController GameController { get => gameController; set => gameController = value; }
+
+    private void Start()
+    {
+        mainMenuController = new MainMenuController();
+    }
 }
