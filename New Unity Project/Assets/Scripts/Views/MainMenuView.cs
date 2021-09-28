@@ -8,15 +8,30 @@ public class MainMenuView : MonoBehaviour
 {
     [SerializeField] private Button startGameButton;
 
+    public Button StartGameButton { get => startGameButton; set => startGameButton = value; }
+
     // Start is called before the first frame update
     void Start()
     {
-        startGameButton.onClick.AddListener(InitializiGameScene);
+        InitializeView();
+    }
+
+    public void InitializeView()
+    {
+        MainApp.instance.MainMenuController.MainMenuView = this;
+ 
+        StartGameButton.onClick.AddListener(InitializiGameScene);
     }
 
     public void InitializiGameScene()
     {
-        SceneManager.LoadScene("GamePlay");
+        MainApp.instance.GameController = new GameController();
+        SceneManager.LoadScene("GamePlay", LoadSceneMode.Additive);
+        RemoveListener();
     }
 
+    public void RemoveListener()
+    {
+        StartGameButton.onClick.RemoveListener(InitializiGameScene);
+    }
 }
