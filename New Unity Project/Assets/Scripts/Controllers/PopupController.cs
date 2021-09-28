@@ -25,9 +25,7 @@ public class PopupController : MonoBehaviour
     [SerializeField] private PausePopup pausePopup;
     [SerializeField] private RectTransform popupCanvas;
 
-    private PausePopup activePopup;
-
-    public PausePopup PausePopup { get => pausePopup; set => pausePopup = value; }
+    Popup activePopup;
 
     public void InstantiatePausePopup()
     {
