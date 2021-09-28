@@ -22,23 +22,33 @@ public class PopupController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    [SerializeField] private PausePopup popupView;
+    [SerializeField] private PausePopup pausePopup;
     [SerializeField] private RectTransform popupCanvas;
 
-    public PausePopup PopupView { get => popupView; set => popupView = value; }
+    private PausePopup activePopup;
+
+    public PausePopup PausePopup { get => pausePopup; set => pausePopup = value; }
 
     public void InstantiatePausePopup()
     {
         Debug.Log("зашел в метод активировать панель паузы");
-        GameObject popupCopy = Instantiate(popupView.gameObject, popupCanvas);
-        //PausePopup popupview = popupCopy.GetComponent<PausePopup>();
+        GameObject popupCopy = Instantiate(this.pausePopup.gameObject, popupCanvas);
+        PausePopup pausePopup = popupCopy.GetComponent<PausePopup>();
+        pausePopup.InstantiatePopup(SwitchToMainMenu);
         popupCopy.SetActive(true);
-
-        PopupView.ExitButton.onClick.AddListener(SwitchToMainMenu);
+        activePopup = pausePopup;
     }
 
     public void SwitchToMainMenu()
     {
-        SceneManager.LoadScene(PopupView.MainMenu, LoadSceneMode.Additive);
+        SceneManager.UnloadScene("GamePlay");
+        DeactivateActivePopup();
+        MainApp.instance.MainMenuController.MainMenuView.StartGameButton.onClick.AddListener(MainApp.instance.MainMenuController.MainMenuView.InitializiGameScene);
+    }
+
+    public void DeactivateActivePopup()
+    {
+        activePopup.DeactivatePopup();
+        activePopup = null;
     }
 }
