@@ -33,16 +33,9 @@ public class PopupController : MonoBehaviour
         Debug.Log("зашел в метод активировать панель паузы");
         GameObject popupCopy = Instantiate(this.pausePopup.gameObject, popupCanvas);
         PausePopup pausePopup = popupCopy.GetComponent<PausePopup>();
-        pausePopup.InstantiatePopup(SwitchToMainMenu);
+        pausePopup.InstantiatePopup(DeactivateActivePopup, MainApp.instance.MainMenuController.MainMenuView.InitializeView);
         popupCopy.SetActive(true);
         activePopup = pausePopup;
-    }
-
-    public void SwitchToMainMenu()
-    {
-        SceneLoader.Unload("GamePlay");
-        DeactivateActivePopup();
-        MainApp.instance.MainMenuController.MainMenuView.InitializeView();
     }
 
     public void DeactivateActivePopup()
