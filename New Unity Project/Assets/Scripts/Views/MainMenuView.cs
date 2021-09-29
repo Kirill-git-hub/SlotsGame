@@ -7,8 +7,10 @@ using UnityEngine.SceneManagement;
 public class MainMenuView : MonoBehaviour
 {
     [SerializeField] private Button startGameButton;
+    [SerializeField] private string gameScene;
 
     public Button StartGameButton { get => startGameButton; set => startGameButton = value; }
+    public string GameScene => gameScene;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +28,7 @@ public class MainMenuView : MonoBehaviour
     public void InitializiGameScene()
     {
         MainApp.instance.GameController = new GameController();
-        SceneManager.LoadScene("GamePlay", LoadSceneMode.Additive);
+        SceneManager.LoadScene(gameScene, LoadSceneMode.Additive);
         RemoveListener();
     }
 
