@@ -5,13 +5,18 @@ using UnityEngine.UI;
 
 public class GameView : MonoBehaviour
 {
-    [SerializeField] private Button pauseButton;
+    [SerializeField] private Button pauseButton = null;
 
     private void Start()
     {
         MainApp.instance.GameController.GameView = this;
-        pauseButton.onClick.AddListener(PopupController.instance.InstantiatePausePopup);
+        AddListener();
         Debug.Log("прикрепил ивент активировать панель паузы");
+    }
+
+    public void AddListener()
+    {
+        pauseButton.onClick.AddListener(PopupController.instance.InstantiatePausePopup);
     }
 
     public void RemoveListener()

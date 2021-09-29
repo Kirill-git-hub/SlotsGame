@@ -22,8 +22,8 @@ public class PopupController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    [SerializeField] private PausePopup pausePopup;
-    [SerializeField] private RectTransform popupCanvas;
+    [SerializeField] private PausePopup pausePopup = null;
+    [SerializeField] private RectTransform popupCanvas = null;
 
     Popup activePopup;
 
@@ -42,5 +42,7 @@ public class PopupController : MonoBehaviour
     {
         activePopup.DeactivatePopup();
         activePopup = null;
+
+        MainApp.instance.GameController.GameView.AddListener();
     }
 }
