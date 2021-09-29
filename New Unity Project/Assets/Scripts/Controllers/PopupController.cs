@@ -40,9 +40,9 @@ public class PopupController : MonoBehaviour
 
     public void SwitchToMainMenu()
     {
-        SceneManager.UnloadScene("GamePlay");
+        SceneLoader.Unload("GamePlay");
         DeactivateActivePopup();
-        MainApp.instance.MainMenuController.MainMenuView.StartGameButton.onClick.AddListener(MainApp.instance.MainMenuController.MainMenuView.InitializiGameScene);
+        MainApp.instance.MainMenuController.MainMenuView.InitializeView();
     }
 
     public void DeactivateActivePopup()
