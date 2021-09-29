@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startGameButton: {fileID: 1275176487}
+  gameScene: GamePlay
 --- !u!4 &49578472
 Transform:
   m_ObjectHideFlags: 0
