@@ -1,5 +1,5 @@
 ﻿
-public enum SlotType
+public enum ItemType
 {
     Strawberry,
     Grapes,
