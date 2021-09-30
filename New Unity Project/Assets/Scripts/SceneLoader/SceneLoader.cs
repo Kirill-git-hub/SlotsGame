@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     [SerializeField] private List<string> scenes = new List<string>();
-    [SerializeField] private string scene1 = null;
-    [SerializeField] private string scene2 = null;
 
     // Start is called before the first frame update
     void Start()
