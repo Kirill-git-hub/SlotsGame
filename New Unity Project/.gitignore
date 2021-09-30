@@ -58,5 +58,26 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
-# .idea directory
-.idea/
+# Hub scripts
+[Aa]ssets/Scripts/Mix888Demo/
+[Aa]ssets/Scripts/Mix888Demo.meta
+
+#Game files
+# [Aa]ssets/Assets/
+# [Aa]ssets/Editor/
+# [Aa]ssets/Resources/
+# [Aa]ssets/Scenes/
+# [Aa]ssets/WebGLTemplates/
+# [Aa]ssetBundles/
+# [Pp]rojectSettings/
+
+# [Aa]ssets/External/
+# [Aa]ssets/External.meta
+
+# [Aa]ssets/Assets.meta
+# [Aa]ssets/Editor.meta
+# [Aa]ssets/Resources.meta
+# [Aa]ssets/Scenes.meta
+# [Aa]ssets/WebGLTemplates.meta
+# [Aa]ssets/WebGLTemplates.meta
+# [Aa]ssetBundles.meta
