@@ -10,6 +10,7 @@ public class Reel : MonoBehaviour
     [SerializeField] private float delay;
     [SerializeField] private float speed;
 
+    private bool isFinal = false;
     private Vector2 startPos;
 
     public Vector2 StartPos { get => startPos; set => startPos = value; }

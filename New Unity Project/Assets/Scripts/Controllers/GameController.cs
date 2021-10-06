@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameController 
 {
     private GameView gameView;
+    private SlotMachine slotMachine;
 
     public GameView GameView { get => gameView; set => gameView = value; }
+    public SlotMachine SlotMachine { get => slotMachine; set => slotMachine = value; }
 }
