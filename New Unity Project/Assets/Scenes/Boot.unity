@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenes:
-  - PausePopup
+  - Popups
   - MainMenu
 --- !u!4 &2002820894
 Transform:
