@@ -488,6 +488,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 16789d258bf32504ab953c0ce800450b, type: 3}
   delay: 0
   speed: 0
+  rectTransform: {fileID: 716387478456335248}
 --- !u!1 &716387478703446872
 GameObject:
   m_ObjectHideFlags: 0
