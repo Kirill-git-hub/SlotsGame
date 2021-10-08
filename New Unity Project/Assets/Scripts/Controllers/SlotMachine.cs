@@ -8,26 +8,34 @@ public class SlotMachine : MonoBehaviour
     [SerializeField] private GameObject[] reelContainer = null;
     [SerializeField] private Reel reelPrefab = null;
 
+    [SerializeField] private List<Reel> reelsList = new List<Reel>();
+
     // Start is called before the first frame update
     void Start()
     {
         MainApp.instance.GameController.SlotMachine = this;
 
         InstantiateReelsAtFinalPos();
+        InstantiateReelsAtStartingPos();
     }
 
     // Update is called once per frame
     void Update()
     {
         StartRotating();
-    }
+
+        CheckReelOrder();
+
+        ClearReelList();
+    }  
 
     public void InstantiateReelsAtFinalPos()
     {
         for (int i = 0; i < reelContainer.Length; i++)
         {
             Reel reel = Instantiate(reelPrefab, reelContainer[i].transform);
-
+            reel.IsCurrent = true;
+            reelsList.Add(reel);
             SetReelPosition(reel, reel.FinalPos);
         }
     }
@@ -37,7 +45,7 @@ public class SlotMachine : MonoBehaviour
         for (int i = 0; i < reelContainer.Length; i++)
         {
             Reel reel = Instantiate(reelPrefab, reelContainer[i].transform);
-
+            reelsList.Add(reel);
             SetReelPosition(reel, reel.StartingPos);
         }
     }
@@ -49,27 +57,53 @@ public class SlotMachine : MonoBehaviour
 
     public void StartRotating()
     {
-        //StartCoroutine(RotateNextReel());
-        //for (int i = 0; i < reelSet.Length; i++)
-        //{
-        //    for (int j = 0; j < reelSet[i].transform.childCount; j++)
-        //    {
-        //        float speed = reelSet[i].transform.GetChild(j).GetComponent<Reel>().Speed;
-        //        reelSet[i].transform.GetChild(j).GetComponent<Reel>().RotateReel(speed);
-        //    }
-        //}
+        for (int i = 0; i < reelContainer.Length; i++)
+        {
+            for (int j = 0; j < reelContainer[i].transform.childCount; j++)
+            {
+                float speed = reelContainer[i].transform.GetChild(j).GetComponent<Reel>().Speed;
+                reelContainer[i].transform.GetChild(j).GetComponent<Reel>().RotateReel(speed);
+            }
+        }
     }
 
-    //public IEnumerator RotateNextReel()
-    //{
-    //    for (int i = 0; i < reelSet.Length; i++)
-    //    {
-    //        for (int j = 0; j < reelSet[i].transform.childCount; j++)
-    //        {
-    //            float speed = reelSet[i].transform.GetChild(j).GetComponent<Reel>().Speed;
-    //            reelSet[i].transform.GetChild(j).GetComponent<Reel>().RotateReel(speed);
-    //        }
-    //        yield return new WaitForSeconds(Random.Range(0.3f,1f));
-    //    }
-    //}
+    public void ClearReelList()
+    {
+        for (int i = 0; i < reelsList.Count; i++)
+        {
+            if (reelsList[i].IsLast && reelsList[i].transform.localPosition.y <= -reelPrefab.ReelRect.rect.height)
+            {
+
+                reelsList[i].DestroyReel();
+                reelsList.Remove(reelsList[i]);
+            }
+        }
+    }
+
+    public void CheckReelOrder()
+    {
+        foreach (Reel reels in reelsList)
+        {
+
+            if (reels.transform.localPosition.y >= (-reelPrefab.ReelRect.rect.height / 2) &&
+                reels.transform.localPosition.y <= (reelPrefab.ReelRect.rect.height / 2))
+            {
+                reels.IsCurrent = true;
+                reels.IsFirst = false;
+                reels.IsLast = false;
+            }
+            else if (reels.transform.localPosition.y >= (reelPrefab.ReelRect.rect.height / 2))
+            {
+                reels.IsCurrent = false;
+                reels.IsFirst = true;
+                reels.IsLast = false;
+            }
+            else if (reels.transform.localPosition.y <= (-reelPrefab.ReelRect.rect.height / 2))
+            {
+                reels.IsCurrent = false;
+                reels.IsFirst = false;
+                reels.IsLast = true;
+            }
+        }
+    }
 }
