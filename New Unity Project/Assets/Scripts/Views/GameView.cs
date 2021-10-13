@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameView : MonoBehaviour
 {
     [SerializeField] private Button pauseButton = null;
+    [SerializeField] private Button spinButton = null;
 
     private void Start()
     {
@@ -17,6 +18,8 @@ public class GameView : MonoBehaviour
     public void AddListener()
     {
         pauseButton.onClick.AddListener(PopupController.instance.InstantiatePausePopup);
+
+        spinButton.onClick.AddListener(MainApp.instance.GameController.StartSpin);
     }
 
     public void RemoveListener()
