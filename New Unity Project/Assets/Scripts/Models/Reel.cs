@@ -5,7 +5,7 @@ using UnityEngine;
 public class Reel : MonoBehaviour
 {
     private static bool canSpin = false;
-    private static float speed = 400f;
+    private static float reelSpeed = 450f;
 
     [SerializeField] private List<ItemModel> itemsList = new List<ItemModel>();
     [SerializeField] private List<Sprite> spritesList = new List<Sprite>();
@@ -15,7 +15,7 @@ public class Reel : MonoBehaviour
     private float spacing = 20f;
     private bool canGetRndIndex;
 
-    public float Speed => speed;
+    public float Speed => reelSpeed;
     public RectTransform BlockRect => bockRect;
     public bool CanSpin { get => canSpin; set => canSpin = value; }
     public float Spacing => spacing;
