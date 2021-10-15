@@ -4,49 +4,28 @@ using UnityEngine;
 
 public class Reel : MonoBehaviour
 {
-    [SerializeField] private static bool canSpin = false;
+    private static bool canSpin = false;
     private static float speed = 400f;
 
     [SerializeField] private List<ItemModel> itemsList = new List<ItemModel>();
     [SerializeField] private List<Sprite> spritesList = new List<Sprite>();
-    [SerializeField] private float delay;
-    [SerializeField] private RectTransform reelRect;
-    [SerializeField] private bool isFisrt = false;
-    [SerializeField] private bool isCurrent = false;
-    [SerializeField] private bool isLast = false;
+    [SerializeField] private RectTransform bockRect = null;
+    [SerializeField] private int index;
 
-    private bool isFinal = false;
-    private Vector3 startingPos = new Vector3(0, 1450, 0);
-    private Vector3 finalPos = new Vector3(0, 0, 0);
-    private Vector3 endingPos = new Vector3(0, -1450, 0);
+    private float spacing = 20f;
+    private bool canGetRndIndex;
 
-    public Vector3 StartingPos => startingPos;
-    public Vector3 FinalPos => finalPos;
-    public Vector3 EndingPos => endingPos;
-    public float Speed { get => speed; set => speed = value; }
-    public float Delay => delay;
-
-    public bool IsFirst { get => isFisrt; set => isFisrt = value; }
-    public bool IsCurrent { get => isCurrent; set => isCurrent = value; }
-    public bool IsLast { get => isLast; set => isLast = value; }
-    public RectTransform ReelRect => reelRect;
-
+    public float Speed => speed;
+    public RectTransform BlockRect => bockRect;
     public bool CanSpin { get => canSpin; set => canSpin = value; }
+    public float Spacing => spacing;
+    public int Index { get => index; set => index = value; }
+    public bool CanGetRndIndex { get => canGetRndIndex; set => canGetRndIndex = value; }
 
     private void Start()
     {
         SetItems();
         CanSpin = false;
-    }
-
-    public void SetPosition(Vector3 pos)
-    {
-        transform.localPosition = pos;
-    }
-
-    public void RotateReel(float reelSpeed)
-    {
-        transform.Translate(Vector2.down * Time.deltaTime * reelSpeed);
     }
 
     public void SetItems()
@@ -58,8 +37,9 @@ public class Reel : MonoBehaviour
         }
     }
 
-    public void DestroyReel()
+    public int GetRandomIndexToStop()
     {
-        Destroy(gameObject);
+        int rndItem = Random.Range(0, itemsList.Count);
+        return rndItem;
     }
 }
