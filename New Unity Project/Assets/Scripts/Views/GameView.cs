@@ -8,6 +8,8 @@ public class GameView : MonoBehaviour
     [SerializeField] private Button pauseButton = null;
     [SerializeField] private Button spinButton = null;
 
+    public Button SpinButton { get => spinButton; set => spinButton = value; }
+
     private void Start()
     {
         MainApp.instance.GameController.GameView = this;
@@ -19,7 +21,7 @@ public class GameView : MonoBehaviour
     {
         pauseButton.onClick.AddListener(PopupController.instance.InstantiatePausePopup);
 
-        spinButton.onClick.AddListener(MainApp.instance.GameController.StartSpin);
+        SpinButton.onClick.AddListener(MainApp.instance.GameController.StartSpin);
     }
 
     public void RemoveListener()
