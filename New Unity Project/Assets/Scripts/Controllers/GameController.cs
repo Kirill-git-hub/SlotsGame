@@ -15,24 +15,4 @@ public class GameController
     {
         MainApp.instance.GameController.SlotMachine.CanRotate();
     }
-
-    //public void InitReels()
-    //{
-    //    //for(int i = 0; i < reels.Count; i++)
-    //    //{
-    //    //    reels[i].SpawnReels();
-    //    //}
-    //    //foreach (ReelSpawner r in reels)
-    //    //{
-    //    //    r.SpawnReels();
-    //    //}
-
-    //    for (int i = 0; i < SlotMachine.ReelContainer.Length; i++)
-    //    {
-    //        for (int j = 0; j < SlotMachine.ReelContainer[i].transform.childCount; j++)
-    //        {
-    //            //SlotMachine.ReelContainer[i].transform.GetChild(j).gameObject.
-    //        }
-    //    }
-    //}
 }
