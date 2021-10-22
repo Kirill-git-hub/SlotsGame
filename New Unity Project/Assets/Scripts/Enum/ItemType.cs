@@ -3,7 +3,7 @@ public enum ItemType
 {
     BeardMan = 0,
     Bell = 1,
-    Humburger = 2,
+    Burger = 2,
     Cherry = 3,
     Coins = 4,
     Diamond = 5,
