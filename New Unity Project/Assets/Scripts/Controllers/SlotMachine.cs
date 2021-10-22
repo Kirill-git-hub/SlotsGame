@@ -7,14 +7,51 @@ public class SlotMachine : MonoBehaviour
     [SerializeField] private GameObject[] reelContainer = null;
     [SerializeField] private Reel reelPrefab = null;
     [SerializeField] private List<Reel> reelsList = new List<Reel>();
-
     [SerializeField] private Lines lines;
+
+    private const int MinLinesCount = 1;
+    private const int MaxLinesCount = 25;
+    private const int MinBetIndex = 0;
+    private const int MaxBetIndex = 5;
+
     private float timeLeft;
+    private int[] bet = { 1, 2, 5, 10, 25, 50};
+    private int betIndex = MinBetIndex;
+    private int linesCount = MinLinesCount;
+    private float totalWin;
 
     public Reel ReelPrefab => reelPrefab;
     public GameObject[] ReelContainer { get => reelContainer; set => reelContainer = value; }
     public List<Reel> ReelsList { get => reelsList; set => reelsList = value; }
     public Lines Lines { get => lines; set => lines = value; }
+    public int[] Bet { get => bet; set => bet = value; }
+    public int LinesCount
+    {
+        get => linesCount;
+        set
+        {
+            if (value < MinLinesCount)
+                value = MinLinesCount;
+            else if (value > MaxLinesCount)
+                value = MaxLinesCount;
+            else
+                linesCount = value;
+        }
+    }
+    public float TotalWin { get => totalWin; set => totalWin = value; }
+    public int BetIndex
+    {
+        get => betIndex;
+        set
+        {
+            if (value < MinBetIndex)
+                value = MinBetIndex;
+            else if (value > MaxBetIndex)
+                value = MaxBetIndex;
+            else
+                betIndex = value;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -49,16 +86,16 @@ public class SlotMachine : MonoBehaviour
                             ReelsList[r].transform.GetChild(0).transform.localPosition +
                             new Vector3(0, ReelPrefab.BlockRect.rect.height, 0);                   
                     }
-                    else if (ReelsList[r].Index >= 0 && ReelsList[r].Index < 2)
-                    {
-                        ReelsList[r].transform.GetChild(0).transform.localPosition = new Vector3
-                            (0, ReelsList[r].Index * -((ReelPrefab.BlockRect.rect.width + ReelPrefab.Spacing)), 0);
+                    //else if (ReelsList[r].Index >= 0 && ReelsList[r].Index < 2)
+                    //{
+                    //    ReelsList[r].transform.GetChild(0).transform.localPosition = new Vector3
+                    //        (0, ReelsList[r].Index * -((ReelPrefab.BlockRect.rect.width + ReelPrefab.Spacing)), 0);
 
-                        ReelsList[r].transform.GetChild(1).transform.localPosition = new Vector3
-                            (ReelsList[r].transform.GetChild(1).transform.localPosition.x,
-                           -ReelPrefab.BlockRect.rect.height - ((ReelPrefab.BlockRect.rect.width + ReelPrefab.Spacing) * ReelsList[r].Index),
-                           ReelsList[r].transform.GetChild(1).transform.localPosition.z);
-                    }
+                    //    ReelsList[r].transform.GetChild(1).transform.localPosition = new Vector3
+                    //        (ReelsList[r].transform.GetChild(1).transform.localPosition.x,
+                    //       -ReelPrefab.BlockRect.rect.height - ((ReelPrefab.BlockRect.rect.width + ReelPrefab.Spacing) * ReelsList[r].Index),
+                    //       ReelsList[r].transform.GetChild(1).transform.localPosition.z);
+                    //}
 
                     if (ReelsList[r].Index >= 52 && ReelsList[r].Index <= 99)
                     {
@@ -69,16 +106,16 @@ public class SlotMachine : MonoBehaviour
                             ReelsList[r].transform.GetChild(1).transform.localPosition +
                             new Vector3(0, ReelPrefab.BlockRect.rect.height, 0);
                     }
-                    else if (ReelsList[r].Index >= 50 && ReelsList[r].Index < 52)
-                    {
-                        ReelsList[r].transform.GetChild(1).transform.localPosition = new Vector3
-                            (0, (ReelsList[r].Index - 50) * -(ReelPrefab.BlockRect.rect.width + ReelPrefab.Spacing), 0);
+                    //else if (ReelsList[r].Index >= 50 && ReelsList[r].Index < 52)
+                    //{
+                    //    ReelsList[r].transform.GetChild(1).transform.localPosition = new Vector3
+                    //        (0, (ReelsList[r].Index - 50) * -(ReelPrefab.BlockRect.rect.width + ReelPrefab.Spacing), 0);
 
-                        ReelsList[r].transform.GetChild(0).transform.localPosition = new Vector3
-                            (ReelsList[r].transform.GetChild(0).transform.localPosition.x,
-                            -ReelPrefab.BlockRect.rect.height - ((ReelPrefab.BlockRect.rect.width + ReelPrefab.Spacing) * (ReelsList[r].Index - 50)),
-                            ReelsList[r].transform.GetChild(0).transform.localPosition.z);
-                    }
+                    //    ReelsList[r].transform.GetChild(0).transform.localPosition = new Vector3
+                    //        (ReelsList[r].transform.GetChild(0).transform.localPosition.x,
+                    //        -ReelPrefab.BlockRect.rect.height - ((ReelPrefab.BlockRect.rect.width + ReelPrefab.Spacing) * (ReelsList[r].Index - 50)),
+                    //        ReelsList[r].transform.GetChild(0).transform.localPosition.z);
+                    //}
                 }
             }
         }
@@ -101,7 +138,7 @@ public class SlotMachine : MonoBehaviour
         reelPrefab.CanSpin = true;
         reelPrefab.CanGetRndIndex = true;
         MainApp.instance.GameController.GameView.SpinButton.interactable = false;
-        timeLeft = 2f;
+        timeLeft = 5f;
     }
 
     public void StartRotating()
