@@ -21,6 +21,7 @@ public class Reel : MonoBehaviour
     public float Spacing => spacing;
     public int Index { get => index; set => index = value; }
     public bool CanGetRndIndex { get => canGetRndIndex; set => canGetRndIndex = value; }
+    public List<ItemModel> ItemsList { get => itemsList; set => itemsList = value; }
 
     private void Start()
     {
@@ -30,16 +31,16 @@ public class Reel : MonoBehaviour
 
     public void SetItems()
     {
-        foreach (ItemModel item in itemsList)
+        foreach (ItemModel item in ItemsList)
         {
             Sprite rndSprite = spritesList[Random.Range(0, spritesList.Count)];
-            item.Init(rndSprite);
+            item.Init(rndSprite, rndSprite.name);
         }
     }
 
     public int GetRandomIndexToStop()
     {
-        int rndItem = Random.Range(0, itemsList.Count);
+        int rndItem = Random.Range(2, ItemsList.Count);
         return rndItem;
     }
 }
