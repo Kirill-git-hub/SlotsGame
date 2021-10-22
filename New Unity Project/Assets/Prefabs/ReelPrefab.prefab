@@ -302,8 +302,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 8776319827133762389}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &233722194657746879
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,8 +385,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 8254487701773235713}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &246076078660828919
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,8 +468,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 8530726203500679593}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &321537789641684458
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,8 +625,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 5124291004542146677}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &437118283692882492
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,8 +856,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 2964885738150088035}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &512058263013405807
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,8 +1087,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 262803606291403047}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &620003501632354727
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,8 +1170,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 2156677852927901447}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &684558601089237571
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,8 +1253,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 4404060771017836217}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &696458526054891263
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,8 +1336,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 9140492700581892128}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &704089058526351193
 GameObject:
   m_ObjectHideFlags: 0
@@ -1484,8 +1493,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 9167227353815212313}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &716387478456335255
 GameObject:
   m_ObjectHideFlags: 0
@@ -1664,18 +1674,13 @@ MonoBehaviour:
   - {fileID: 5766417018270438451}
   - {fileID: 6841169546384098495}
   spritesList:
-  - {fileID: 21300000, guid: 43a4e6de0d1275f41bd89eb9ab9ea180, type: 3}
-  - {fileID: 21300000, guid: 69b877c0f5d8a1d4eba45e1e1eb44f95, type: 3}
-  - {fileID: 21300000, guid: a094ada759e42a04aa0d4d2154b91cf8, type: 3}
   - {fileID: 21300000, guid: a431f6782cfc0744ab7023b619e6b663, type: 3}
   - {fileID: 21300000, guid: 8afb76f7da89ef74ba63d737716c71b8, type: 3}
   - {fileID: 21300000, guid: 999ec541c101500419bf313c129d526e, type: 3}
-  - {fileID: 21300000, guid: f30d6afe0835a1543b7bf8222bad68db, type: 3}
-  - {fileID: 21300000, guid: 0a03e682f71a77a4a99d2ccfe03a97ad, type: 3}
   - {fileID: 21300000, guid: 90392adf1abfa144b8eab00d8bf219fc, type: 3}
-  - {fileID: 21300000, guid: 16789d258bf32504ab953c0ce800450b, type: 3}
+  - {fileID: 21300000, guid: 0a03e682f71a77a4a99d2ccfe03a97ad, type: 3}
+  - {fileID: 21300000, guid: a094ada759e42a04aa0d4d2154b91cf8, type: 3}
   bockRect: {fileID: 1647230120087417967}
-  itemRect: {fileID: 8559099416979458668}
   index: 0
 --- !u!1 &787249155461649971
 GameObject:
@@ -1757,8 +1762,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 3037615945133280807}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &956610067945890909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1839,8 +1845,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 3092413909853670481}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &957429456811902688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1995,8 +2002,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 2629530083211551463}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &1031903865886819714
 GameObject:
   m_ObjectHideFlags: 0
@@ -2151,8 +2159,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 1141206603047311792}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &1243694383079936274
 GameObject:
   m_ObjectHideFlags: 0
@@ -2307,8 +2316,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 598407389573025245}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &1354899875594628084
 GameObject:
   m_ObjectHideFlags: 0
@@ -2389,8 +2399,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 5858763252796756988}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &1418533424823568995
 GameObject:
   m_ObjectHideFlags: 0
@@ -2471,8 +2482,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 8675553722702556971}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &1426150899994590900
 GameObject:
   m_ObjectHideFlags: 0
@@ -2775,8 +2787,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 1380305713973265185}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &1504928004955055016
 GameObject:
   m_ObjectHideFlags: 0
@@ -3005,8 +3018,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 6730153713379159961}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &1604319530623084968
 GameObject:
   m_ObjectHideFlags: 0
@@ -3161,8 +3175,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 1515663407996408187}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &1774160517144714100
 GameObject:
   m_ObjectHideFlags: 0
@@ -3243,8 +3258,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 5243219374255072043}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &1777320055797983661
 GameObject:
   m_ObjectHideFlags: 0
@@ -3325,8 +3341,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 7559904110123488217}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &1805896876113179679
 GameObject:
   m_ObjectHideFlags: 0
@@ -3407,8 +3424,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 6124555621678407675}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &1829882983346737950
 GameObject:
   m_ObjectHideFlags: 0
@@ -3563,8 +3581,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 620136450860242854}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &1977395444179182891
 GameObject:
   m_ObjectHideFlags: 0
@@ -3793,8 +3812,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 3950620010457710457}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &2146030390283128357
 GameObject:
   m_ObjectHideFlags: 0
@@ -3875,8 +3895,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 7710877718750885890}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &2217914861356089247
 GameObject:
   m_ObjectHideFlags: 0
@@ -3957,8 +3978,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 5849347826169657093}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &2237096617824808220
 GameObject:
   m_ObjectHideFlags: 0
@@ -4261,8 +4283,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 4810632777616604099}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &2416796312429288344
 GameObject:
   m_ObjectHideFlags: 0
@@ -4491,8 +4514,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 3603507368222241692}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &2618954816510861225
 GameObject:
   m_ObjectHideFlags: 0
@@ -4721,8 +4745,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 5823743534249756070}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &2745842507133790949
 GameObject:
   m_ObjectHideFlags: 0
@@ -4951,8 +4976,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 1757902395697734499}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &3003288350360854423
 GameObject:
   m_ObjectHideFlags: 0
@@ -5033,8 +5059,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 2391577234494663540}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &3030126587413271997
 GameObject:
   m_ObjectHideFlags: 0
@@ -5189,8 +5216,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 2327555323066210351}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &3077578267659920891
 GameObject:
   m_ObjectHideFlags: 0
@@ -5419,8 +5447,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 1083492800999664325}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &3212513567378491631
 GameObject:
   m_ObjectHideFlags: 0
@@ -5501,8 +5530,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 7697546053916248673}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &3247839798112058526
 GameObject:
   m_ObjectHideFlags: 0
@@ -5583,8 +5613,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 1657058112601351121}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &3252991152665512839
 GameObject:
   m_ObjectHideFlags: 0
@@ -5813,8 +5844,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 6194633237807454294}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &3342697918307690546
 GameObject:
   m_ObjectHideFlags: 0
@@ -5895,8 +5927,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 2675641840998295259}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &3351262410890378232
 GameObject:
   m_ObjectHideFlags: 0
@@ -5977,8 +6010,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 6144161463308934776}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &3355240716571047742
 GameObject:
   m_ObjectHideFlags: 0
@@ -6059,8 +6093,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 8700296936982849079}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &3484210211545417690
 GameObject:
   m_ObjectHideFlags: 0
@@ -6437,8 +6472,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 6411903209705180373}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &3589895665495742582
 GameObject:
   m_ObjectHideFlags: 0
@@ -6519,8 +6555,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 4227345213365236869}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &3643231714954725951
 GameObject:
   m_ObjectHideFlags: 0
@@ -6675,8 +6712,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 3458740439147679099}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &3692376703178717266
 GameObject:
   m_ObjectHideFlags: 0
@@ -6757,8 +6795,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 8612958888474598369}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &3712147189830466036
 GameObject:
   m_ObjectHideFlags: 0
@@ -6987,8 +7026,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 3579606536613575770}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &3859119229978975656
 GameObject:
   m_ObjectHideFlags: 0
@@ -7217,8 +7257,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 6576611376749506983}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &3965870689613723657
 GameObject:
   m_ObjectHideFlags: 0
@@ -7299,8 +7340,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 2714286250300813513}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &4012473968980611797
 GameObject:
   m_ObjectHideFlags: 0
@@ -7381,8 +7423,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 486313085733405580}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &4157926428948897285
 GameObject:
   m_ObjectHideFlags: 0
@@ -7463,8 +7506,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 7303405027716523413}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &4308105744722014531
 GameObject:
   m_ObjectHideFlags: 0
@@ -7545,8 +7589,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 8100599618457104705}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &4347238735719875846
 GameObject:
   m_ObjectHideFlags: 0
@@ -7627,8 +7672,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 915209994626133381}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &4359609030336249751
 GameObject:
   m_ObjectHideFlags: 0
@@ -7709,8 +7755,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 5277412422213935009}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &4376189249688909005
 GameObject:
   m_ObjectHideFlags: 0
@@ -7791,8 +7838,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 3791045218618135719}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &4409214341860295981
 GameObject:
   m_ObjectHideFlags: 0
@@ -7873,8 +7921,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 7367426946356386032}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &4466594603358794948
 GameObject:
   m_ObjectHideFlags: 0
@@ -7955,8 +8004,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 8805063023411310746}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &4468064747533672674
 GameObject:
   m_ObjectHideFlags: 0
@@ -8185,8 +8235,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 3868886243962843433}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &4627139981933744015
 GameObject:
   m_ObjectHideFlags: 0
@@ -8415,8 +8466,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 3013366642456537349}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &4678536811212573316
 GameObject:
   m_ObjectHideFlags: 0
@@ -8645,8 +8697,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 743083648868722789}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &4789768686295569346
 GameObject:
   m_ObjectHideFlags: 0
@@ -8727,8 +8780,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 7073901443963641828}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &4809376694638758723
 GameObject:
   m_ObjectHideFlags: 0
@@ -8809,8 +8863,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 3795127229114225607}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &4830235477242121066
 GameObject:
   m_ObjectHideFlags: 0
@@ -8891,8 +8946,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 1558467936832389524}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &4842230855991892812
 GameObject:
   m_ObjectHideFlags: 0
@@ -8973,8 +9029,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 7985370150213060040}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &4872859992621103236
 GameObject:
   m_ObjectHideFlags: 0
@@ -9055,8 +9112,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 5667787630419827929}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &4874291013301049988
 GameObject:
   m_ObjectHideFlags: 0
@@ -9137,8 +9195,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 6311156894654007961}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &4898143238314038303
 GameObject:
   m_ObjectHideFlags: 0
@@ -9515,8 +9574,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 6415349931142232799}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &5149288805922421307
 GameObject:
   m_ObjectHideFlags: 0
@@ -9597,8 +9657,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 8456035709229549279}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &5321404959724620216
 GameObject:
   m_ObjectHideFlags: 0
@@ -9901,8 +9962,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 4366179026113276821}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &5497013580298417457
 GameObject:
   m_ObjectHideFlags: 0
@@ -9983,8 +10045,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 7485448772205445477}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &5588234761092060634
 GameObject:
   m_ObjectHideFlags: 0
@@ -10065,8 +10128,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 5652538513428449151}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &5674500505723818604
 GameObject:
   m_ObjectHideFlags: 0
@@ -10147,8 +10211,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 4400337696739883494}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &5724264598246651103
 GameObject:
   m_ObjectHideFlags: 0
@@ -10731,8 +10796,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 7089459526318837410}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &5917959519568624299
 GameObject:
   m_ObjectHideFlags: 0
@@ -10961,8 +11027,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 2624303230495371015}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &5938340909090966774
 GameObject:
   m_ObjectHideFlags: 0
@@ -11265,8 +11332,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 2483281877684804549}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &6029413010393461340
 GameObject:
   m_ObjectHideFlags: 0
@@ -11347,8 +11415,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 6257464832512345605}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &6152239855355448515
 GameObject:
   m_ObjectHideFlags: 0
@@ -11931,8 +12000,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 7619879645020669388}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &6481018195590756061
 GameObject:
   m_ObjectHideFlags: 0
@@ -12013,8 +12083,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 8688471668570322975}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &6502697804806177304
 GameObject:
   m_ObjectHideFlags: 0
@@ -12095,8 +12166,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 4540724514723441322}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &6512251140717626805
 GameObject:
   m_ObjectHideFlags: 0
@@ -12473,8 +12545,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 4085264116784618283}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &6661318821161974626
 GameObject:
   m_ObjectHideFlags: 0
@@ -12777,8 +12850,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 1262703155149030334}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &6849702303576799447
 GameObject:
   m_ObjectHideFlags: 0
@@ -12933,8 +13007,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 3666424087797854103}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &7042754854912372989
 GameObject:
   m_ObjectHideFlags: 0
@@ -13015,8 +13090,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 6102540796192159079}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &7101161626340110736
 GameObject:
   m_ObjectHideFlags: 0
@@ -13097,8 +13173,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 8203964364038512928}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &7144285763659447759
 GameObject:
   m_ObjectHideFlags: 0
@@ -13179,8 +13256,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 3476163869367914512}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &7330694656517812503
 GameObject:
   m_ObjectHideFlags: 0
@@ -13557,8 +13635,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 620238270328137158}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &7606933341219976701
 GameObject:
   m_ObjectHideFlags: 0
@@ -13639,8 +13718,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 4430518682290756627}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &7629143606881971332
 GameObject:
   m_ObjectHideFlags: 0
@@ -13943,8 +14023,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 2491367054985774917}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &7897780990232131891
 GameObject:
   m_ObjectHideFlags: 0
@@ -14099,8 +14180,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 4050080338845781867}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &8027277108239880273
 GameObject:
   m_ObjectHideFlags: 0
@@ -14255,8 +14337,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 2619626299000146844}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &8153919591239993163
 GameObject:
   m_ObjectHideFlags: 0
@@ -14411,8 +14494,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 6563685185139927027}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &8466499272140908510
 GameObject:
   m_ObjectHideFlags: 0
@@ -14789,8 +14873,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 3631372815213686594}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &8635123664248577686
 GameObject:
   m_ObjectHideFlags: 0
@@ -14945,8 +15030,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 5954936223342995322}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &8751475631144600286
 GameObject:
   m_ObjectHideFlags: 0
@@ -15101,8 +15187,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 1413328462034487875}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &8862366041708926369
 GameObject:
   m_ObjectHideFlags: 0
@@ -15183,8 +15270,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 130049962729112145}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &8881702831857256609
 GameObject:
   m_ObjectHideFlags: 0
@@ -15413,8 +15501,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 5904134929533293507}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &8903952654788499417
 GameObject:
   m_ObjectHideFlags: 0
@@ -15495,8 +15584,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 3695850344978305040}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &8974777611810654699
 GameObject:
   m_ObjectHideFlags: 0
@@ -15725,8 +15815,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 1836022982409783224}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &9126042878434240184
 GameObject:
   m_ObjectHideFlags: 0
@@ -15807,8 +15898,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 2698348501354224558}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &9139879120283779402
 GameObject:
   m_ObjectHideFlags: 0
@@ -15889,8 +15981,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 2860609623199056970}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &9189167441352644339
 GameObject:
   m_ObjectHideFlags: 0
@@ -15971,8 +16064,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 3330311204502838555}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
 --- !u!1 &9197260743755541070
 GameObject:
   m_ObjectHideFlags: 0
@@ -16053,5 +16147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemImage: {fileID: 6818037716332797889}
-  slotType: 0
+  itemType: 0
   payout: 0
+  itemID: 0
