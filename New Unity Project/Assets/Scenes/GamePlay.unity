@@ -251,7 +251,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 500
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -1916,6 +1916,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseButton: {fileID: 1688429205}
   spinButton: {fileID: 893123875}
+  increaseBetButton: {fileID: 1959534124}
+  decreaseBetButton: {fileID: 469071830}
+  increaseLinesCountButton: {fileID: 1871731586}
+  decreaseLinesCountButton: {fileID: 994331188}
+  betText: {fileID: 75706652}
+  linesCountText: {fileID: 1505601758}
+  totalWinText: {fileID: 1460890831}
 --- !u!1 &1011344559
 GameObject:
   m_ObjectHideFlags: 0
@@ -2708,7 +2715,7 @@ GameObject:
   - component: {fileID: 1505601759}
   - component: {fileID: 1505601758}
   m_Layer: 5
-  m_Name: Text_ShowLinesNumber
+  m_Name: Text_ShowLinesCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2752,7 +2759,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
