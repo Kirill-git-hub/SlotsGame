@@ -14,6 +14,8 @@ public class GameController
     public void StartSpin()
     {
         MainApp.instance.GameController.SlotMachine.CanRotate();
+        MainApp.instance.GameController.SlotMachine.TotalWin = 0f;
+        MainApp.instance.GameController.GameView.TotalWinText.text = MainApp.instance.GameController.SlotMachine.TotalWin.ToString();  
     }
 
     public void IncreaseBet()
@@ -38,12 +40,19 @@ public class GameController
 
     public void UpdateLinesCount()
     {
-        MainApp.instance.GameController.GameView.LinesCountText.text = MainApp.instance.GameController.SlotMachine.LinesCount.ToString();
+        MainApp.instance.GameController.GameView.LinesCountText.text = 
+            MainApp.instance.GameController.SlotMachine.LinesCount.ToString();
     }
 
     public void UpdateBet()
     {
         MainApp.instance.GameController.GameView.BetText.text = 
             MainApp.instance.GameController.SlotMachine.Bet[MainApp.instance.GameController.SlotMachine.BetIndex].ToString();
+    }
+
+    public void UpdateTotalWin()
+    {
+        MainApp.instance.GameController.GameView.TotalWinText.text = 
+            MainApp.instance.GameController.SlotMachine.TotalWin.ToString();
     }
 }
