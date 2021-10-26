@@ -56,9 +56,9 @@ public class Lines : MonoBehaviour
 
     public void CheckLines(int[] generatedIndexes, int[][] linesToCheck)
     {
-        for (int lines = 0; lines < linesToCheck.Length; lines++)
+        for (int lines = 0; lines < MainApp.instance.GameController.SlotMachine.LinesCount; lines++)
         {
-            Debug.Log("линия - " + lines);
+            //Debug.Log("линия - " + lines);
             int winIndex;
             winItemCounter = 1;
             winItem = null;
@@ -89,12 +89,20 @@ public class Lines : MonoBehaviour
                             else
                             {
                                 isCorrectItem = false;
+
+                                if (winItemCounter >= 2)
+                                {
+                                    MainApp.instance.GameController.SlotMachine.TotalWin +=
+                                        ((MainApp.instance.GameController.SlotMachine.Bet[MainApp.instance.GameController.SlotMachine.BetIndex] / 
+                                        MainApp.instance.GameController.SlotMachine.LinesCount) * (winItemCounter * winItem.Payout));
+                                }
                             }
                         }
-                    }
+                    }                   
                 }
             }
-            Debug.Log(winItemCounter);
+
+            //Debug.Log(winItemCounter);
         }
     }
 }
