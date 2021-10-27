@@ -59,7 +59,7 @@ public class SlotMachine : MonoBehaviour
         MainApp.instance.GameController.SlotMachine = this;
         InstantiateReels();
         totalWin = 0;
-        MainApp.instance.GameController.UpdateTotalWin();
+        MainApp.instance.GameController.GameView.UpdateTotalWin();
     }
 
     // Update is called once per frame
@@ -100,7 +100,7 @@ public class SlotMachine : MonoBehaviour
                 }
 
                 Lines.CheckLines(Lines.ResultArray, Lines.PayLines);
-                MainApp.instance.GameController.UpdateTotalWin();
+                MainApp.instance.GameController.GameView.UpdateTotalWin();
             }
         }
 

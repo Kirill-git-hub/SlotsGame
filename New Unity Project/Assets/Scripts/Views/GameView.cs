@@ -38,31 +38,66 @@ public class GameView : MonoBehaviour
 
         increaseLinesCountButton.onClick.AddListener(() => 
         {
-            MainApp.instance.GameController.IncreaseLinesCount();
-            MainApp.instance.GameController.UpdateLinesCount();
+            IncreaseLinesCount();
+            UpdateLinesCount();
         });
 
         decreaseLinesCountButton.onClick.AddListener(() => 
         {
-            MainApp.instance.GameController.DecreaseLinesCount();
-            MainApp.instance.GameController.UpdateLinesCount();
+            DecreaseLinesCount();
+            UpdateLinesCount();
         });
 
         increaseBetButton.onClick.AddListener(() => 
         {
-            MainApp.instance.GameController.IncreaseBet();
-            MainApp.instance.GameController.UpdateBet();
+            IncreaseBet();
+            UpdateBet();
         });
 
         decreaseBetButton.onClick.AddListener(() => 
         {
-            MainApp.instance.GameController.DecreaseBet();
-            MainApp.instance.GameController.UpdateBet();
+            DecreaseBet();
+            UpdateBet();
         });
     }
 
     public void RemoveListener()
     {
         pauseButton.onClick.RemoveListener(PopupController.instance.InstantiatePausePopup);
+    }
+
+    public void IncreaseBet()
+    {
+        MainApp.instance.GameController.SlotMachine.BetIndex++;
+    }
+
+    public void DecreaseBet()
+    {
+        MainApp.instance.GameController.SlotMachine.BetIndex--;
+    }
+
+    public void IncreaseLinesCount()
+    {
+        MainApp.instance.GameController.SlotMachine.LinesCount++;
+    }
+
+    public void DecreaseLinesCount()
+    {
+        MainApp.instance.GameController.SlotMachine.LinesCount--;
+    }
+
+    public void UpdateLinesCount()
+    {
+        LinesCountText.text = MainApp.instance.GameController.SlotMachine.LinesCount.ToString();
+    }
+
+    public void UpdateBet()
+    {
+        BetText.text = MainApp.instance.GameController.SlotMachine.Bet[MainApp.instance.GameController.SlotMachine.BetIndex].ToString();
+    }
+
+    public void UpdateTotalWin()
+    {
+        TotalWinText.text = MainApp.instance.GameController.SlotMachine.TotalWin.ToString();
     }
 }
