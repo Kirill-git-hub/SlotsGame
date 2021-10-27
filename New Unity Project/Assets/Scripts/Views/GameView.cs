@@ -38,25 +38,25 @@ public class GameView : MonoBehaviour
 
         increaseLinesCountButton.onClick.AddListener(() => 
         {
-            IncreaseLinesCount();
+            MainApp.instance.GameController.IncreaseLinesCount();
             UpdateLinesCount();
         });
 
         decreaseLinesCountButton.onClick.AddListener(() => 
         {
-            DecreaseLinesCount();
+            MainApp.instance.GameController.DecreaseLinesCount();
             UpdateLinesCount();
         });
 
         increaseBetButton.onClick.AddListener(() => 
         {
-            IncreaseBet();
+            MainApp.instance.GameController.IncreaseBet();
             UpdateBet();
         });
 
         decreaseBetButton.onClick.AddListener(() => 
         {
-            DecreaseBet();
+            MainApp.instance.GameController.DecreaseBet();
             UpdateBet();
         });
     }
@@ -64,26 +64,6 @@ public class GameView : MonoBehaviour
     public void RemoveListener()
     {
         pauseButton.onClick.RemoveListener(PopupController.instance.InstantiatePausePopup);
-    }
-
-    public void IncreaseBet()
-    {
-        MainApp.instance.GameController.SlotMachine.BetIndex++;
-    }
-
-    public void DecreaseBet()
-    {
-        MainApp.instance.GameController.SlotMachine.BetIndex--;
-    }
-
-    public void IncreaseLinesCount()
-    {
-        MainApp.instance.GameController.SlotMachine.LinesCount++;
-    }
-
-    public void DecreaseLinesCount()
-    {
-        MainApp.instance.GameController.SlotMachine.LinesCount--;
     }
 
     public void UpdateLinesCount()
