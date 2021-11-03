@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Popup : MonoBehaviour
+public class Popup 
 {
-    protected bool isInstantiatedCopy = false;
+    protected bool isActivePopup = true;
 
-    public void DeactivatePopup()
+    protected void DisactivatePopup(GameObject obj)
     {
-        if (isInstantiatedCopy)
+        if (isActivePopup)
         {
-            Destroy(gameObject);
+            obj.SetActive(!isActivePopup);
         }
     }
 }
