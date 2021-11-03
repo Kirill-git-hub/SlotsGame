@@ -5,29 +5,21 @@ using UnityEngine;
 public class SlotMachine 
 {
     Reel genericReel = new Reel();
-    private GameObject[] reelContainer = null;
-    private List<GameObject> reelCont = new List<GameObject>();
-    private Reel reelPrefab = null;
+    private List<GameObject> reelsContainer = new List<GameObject>();
     private List<Reel> reelsList = new List<Reel>();
     private List<GameObject> reelsObjList = new List<GameObject>();
     private Lines lines;
-
     private GameObject slotMachineObj;
-
-
     private const int MinLinesCount = 1;
     private const int MaxLinesCount = 25;
     private const int MinBetIndex = 0;
     private const int MaxBetIndex = 5;
-
     private float timeLeft;
     private float[] bet = { 1, 2, 5, 10, 25, 50};
     private int betIndex = MinBetIndex;
     private float linesCount = MinLinesCount;
     private float totalWin = 0f;
 
-    public Reel ReelPrefab => reelPrefab;
-    public GameObject[] ReelContainer { get => reelContainer; set => reelContainer = value; }
     public List<Reel> ReelsList { get => reelsList; set => reelsList = value; }
     public Lines Lines { get => lines; set => lines = value; }
     public float[] Bet { get => bet; set => bet = value; }
@@ -78,7 +70,7 @@ public class SlotMachine
 
             for (int j = 0; j < SlotMachineObj.transform.GetChild(i).childCount; j++)
             {
-                reelCont.Add(container.GetChild(j).gameObject); 
+                reelsContainer.Add(container.GetChild(j).gameObject); 
                 //Debug.Log(reelCont[i]);
             }
         }
@@ -193,7 +185,7 @@ public class SlotMachine
 
         if (genericReel.CanGetRndIndex)
         {
-            for (int i = 0; i < reelCont.Count; i++)
+            for (int i = 0; i < reelsContainer.Count; i++)
             {
                 ReelsList[i].Index = ReelsList[i].GetRandomIndexToStop();
                 //Debug.Log(ReelsList[i].Index);
@@ -266,12 +258,12 @@ public class SlotMachine
 
     public void InstantiateReels()
     {
-        for (int i = 0; i < reelCont.Count; i++)
+        for (int i = 0; i < reelsContainer.Count; i++)
         { 
-            ReelsList.Add(new Reel(reelCont[i].transform));
+            ReelsList.Add(new Reel(reelsContainer[i].transform));
         }
 
-        foreach (GameObject item in reelCont)
+        foreach (GameObject item in reelsContainer)
         {
             ReelsObjList.Add(item.transform.GetChild(0).gameObject);
         }
