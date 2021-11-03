@@ -679,7 +679,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1565863412}
+      - m_Target: {fileID: 0}
         m_MethodName: DeactivateActivePopup
         m_Mode: 1
         m_Arguments:
@@ -1035,7 +1035,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1169420581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1161,28 +1161,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1565863413}
-  - component: {fileID: 1565863412}
   m_Layer: 0
   m_Name: PopupController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1565863412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1565863411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b1a4b12df9fe7b4b9021727d0896076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pausePopup: {fileID: 1722687166}
-  popupCanvas: {fileID: 1169420584}
+  m_IsActive: 0
 --- !u!4 &1565863413
 Transform:
   m_ObjectHideFlags: 0
