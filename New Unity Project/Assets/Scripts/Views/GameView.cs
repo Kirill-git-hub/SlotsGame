@@ -4,38 +4,93 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class GameView : MonoBehaviour
+public class GameView 
 {
-    [SerializeField] private Button pauseButton = null;
-    [SerializeField] private Button spinButton = null;
-    [SerializeField] private Button increaseBetButton = null;
-    [SerializeField] private Button decreaseBetButton = null;
-    [SerializeField] private Button increaseLinesCountButton = null;
-    [SerializeField] private Button decreaseLinesCountButton = null;
-    [SerializeField] private TextMeshProUGUI betText = null;
-    [SerializeField] private TextMeshProUGUI linesCountText = null;
-    [SerializeField] private TextMeshProUGUI totalWinText = null;
+    private PopupController popupController;
+    private GameObject gamePlayCanvas;
+
+    private Button spinButton = null;
+    private Button increaseBetButton = null;
+    private Button decreaseBetButton = null;
+    private Button increaseLinesCountButton = null;
+    private Button decreaseLinesCountButton = null;
+    private TextMeshProUGUI betText = null;
+    private TextMeshProUGUI linesCountText = null;
+    private TextMeshProUGUI totalWinText = null;
+
+    private Button pauseButton = null;
+    private GameObject pausePopup = null;
+    private GameObject panel = null;
+    private GameObject gamePanel = null;
+    private GameObject betLinesContainer;
 
     public Button SpinButton { get => spinButton; set => spinButton = value; }
     public TextMeshProUGUI LinesCountText { get => linesCountText; set => linesCountText = value; }
     public TextMeshProUGUI BetText { get => betText; set => betText = value; }
     public TextMeshProUGUI TotalWinText { get => totalWinText; set => totalWinText = value; }
+    public GameObject GamePlayCanvas { get => gamePlayCanvas; set => gamePlayCanvas = value; }
 
-    private void Start()
+    public GameView()
     {
-        MainApp.instance.GameController.GameView = this;
-        AddListener();
-        //MainApp.instance.GameController.UpdateLinesCount();
+        GamePlayCanvas = GameObject.Find("Canvas_GamePlay/Panel_Background");
+        SpinButton = GamePlayCanvas.transform.Find("Panel_UI/Button_Spin").GetComponent<Button>();
+        pauseButton = GamePlayCanvas.transform.Find("Button_Pause").GetComponent<Button>();
+        betLinesContainer = GamePlayCanvas.transform.Find("Panel_UI/BetLinesContainer").gameObject;
+        increaseBetButton = betLinesContainer.transform.Find("Bet/Button_Plus").GetComponent<Button>();
+        decreaseBetButton = betLinesContainer.transform.Find("Bet/Button_Minus").GetComponent<Button>();
+        increaseLinesCountButton = betLinesContainer.transform.Find("Lines/Button_Plus").GetComponent<Button>();
+        decreaseLinesCountButton = betLinesContainer.transform.Find("Lines/Button_Minus").GetComponent<Button>();
+        betText = betLinesContainer.transform.Find("Bet/Text_ShowBet").GetComponent<TextMeshProUGUI>();
+        linesCountText = betLinesContainer.transform.Find("Lines/Text_ShowLinesCount").GetComponent<TextMeshProUGUI>();
+        totalWinText = GamePlayCanvas.transform.Find("Panel_UI/TotalWin/Text_ShowTotalWin").GetComponent<TextMeshProUGUI>();
 
+        //GamePlayCanvas = GameObject.Find("Canvas_GamePlay");
+
+        SpinButton.onClick.AddListener(Spin);
+        pauseButton.onClick.AddListener(PauseButtonOnClick);
+        AddListener();
+        DisactivateGamePanel();
+
+    }
+
+    public void ActivateGamePanel()
+    {
+        GamePlayCanvas.SetActive(true);
+    }
+
+    public void DisactivateGamePanel()
+    {
+        GamePlayCanvas.SetActive(false);
+    }
+
+    private void Spin()
+    {
+        MainApp.instance.GameController.StartSpin();
+    }
+
+    public void Start()
+    {
+        //pauseButton = GameObject.Find("Canvas_GamePlay/Panel_Background/Button_Pause").gameObject.GetComponent<Button>();
+        //gamePanel = GameObject.Find("Canvas_GamePlay/Panel_Background");
+        //SpinButton = gamePanel.transform.Find("Panel_UI/Button_Spin").GetComponent<Button>();
+
+        // pausePopup = GameObject.Find("Canvas_Popups/PausePopup");
+        // panel = GameObject.Find("Canvas_GamePlay");
+        // pauseButton = panel.transform.Find("Panel_Background/Button_Pause").GetComponent<Button>();
+        // pauseButton.onClick.AddListener(InstantiatePausePopup);
+
+        // Debug.Log("Start in GameView");
+        // SpinButton.onClick.AddListener(MainApp.instance.GameController.StartSpin);
+
+        //MainApp.instance.GameController.GameView = this;
+        //AddListener();
+        //MainApp.instance.GameController.UpdateLinesCount();
         Debug.Log("прикрепил ивент активировать панель паузы");
+
     }
 
     public void AddListener()
     {
-        pauseButton.onClick.AddListener(PopupController.instance.InstantiatePausePopup);
-
-        SpinButton.onClick.AddListener(MainApp.instance.GameController.StartSpin);
-
         increaseLinesCountButton.onClick.AddListener(() => 
         {
             MainApp.instance.GameController.IncreaseLinesCount();
@@ -61,10 +116,15 @@ public class GameView : MonoBehaviour
         });
     }
 
-    public void RemoveListener()
+    public void PauseButtonOnClick()
     {
-        pauseButton.onClick.RemoveListener(PopupController.instance.InstantiatePausePopup);
+        MainApp.instance.PopupController.PausePopup.SetActivePausePopup();
     }
+
+    // public void RemoveListener()
+    // {
+    //     pauseButton.onClick.RemoveListener(popupController.InstantiatePausePopup);
+    // }
 
     public void UpdateLinesCount()
     {
