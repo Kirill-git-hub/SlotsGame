@@ -7,7 +7,6 @@ using UnityEngine.Events;
 
 public class PausePopup : Popup
 {
-    //protected bool isActivePopup = true;
     private Button continueButton = null;
     private Button exitButton = null;
     private GameObject pausePopupPanel;
@@ -26,7 +25,6 @@ public class PausePopup : Popup
             MainApp.instance.MainMenuController.MainMenuView.ActivateMainMenuPanel();
         });
 
-        //pausePopupPanel.SetActive(!isActivePopup);
         DisactivatePopup(pausePopupPanel);
     }
 
@@ -35,24 +33,8 @@ public class PausePopup : Popup
         pausePopupPanel.SetActive(isActivePopup);
     }
 
-    // public void ClearRel()
+    // public void ClearReel()
     // {
     //     MainApp.instance.GameController.SlotMachine.ClearReels();
     // }
-
-    public void InstantiatePopup(UnityAction action, UnityAction action1)
-    {
-        //isInstantiatedCopy = true;
-        //isActivePopup = true;
-
-        //continueButton.onClick.AddListener(PopupController.instance.DeactivateActivePopup);
-        //continueButton.onClick.AddListener(MainApp.instance.GameController.PopupController.DeactivateActivePopup);
-
-        //exitButton.onClick.AddListener(()=>
-        //{
-        //    //SceneLoader.Unload(MainApp.instance.MainMenuController.MainMenuView.GameScene);
-        //    action();
-        //    action1();  
-        //});
-    }
 }

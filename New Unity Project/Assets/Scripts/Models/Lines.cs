@@ -38,8 +38,8 @@ public class Lines
         new int []{ 1, 0, 2, 0, 1 }, // 24
     };  
 
-    public int[] ResultArray { get => resultArray; set => resultArray = value; }
-    public int[][] PayLines { get => payLines; set => payLines = value; }
+    public int[] ResultArray => resultArray; 
+    public int[][] PayLines => payLines; 
 
     public void FillResultArray()
     {

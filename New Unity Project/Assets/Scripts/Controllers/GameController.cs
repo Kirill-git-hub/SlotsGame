@@ -16,7 +16,6 @@ public class GameController
     {
         SlotMachine = new SlotMachine();
         GameView = new GameView();
-
     }
 
     public void Start()
@@ -29,8 +28,8 @@ public class GameController
     public void StartSpin()
     {
         SlotMachine.CanRotate();
-        SlotMachine.TotalWin = 0f; //это нужное, не удалять
-        MainApp.instance.GameController.GameView.TotalWinText.text = SlotMachine.TotalWin.ToString(); 
+        SlotMachine.TotalWin = 0f;
+        MainApp.instance.GameController.GameView.UpdateTotalWin();
 
         Debug.Log("start spin method"); 
     }

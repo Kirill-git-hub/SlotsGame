@@ -8,7 +8,6 @@ public class GameView
 {
     private PopupController popupController;
     private GameObject gamePlayCanvas;
-
     private Button spinButton = null;
     private Button increaseBetButton = null;
     private Button decreaseBetButton = null;
@@ -27,70 +26,24 @@ public class GameView
     public Button SpinButton { get => spinButton; set => spinButton = value; }
     public TextMeshProUGUI LinesCountText { get => linesCountText; set => linesCountText = value; }
     public TextMeshProUGUI BetText { get => betText; set => betText = value; }
-    public TextMeshProUGUI TotalWinText { get => totalWinText; set => totalWinText = value; }
-    public GameObject GamePlayCanvas { get => gamePlayCanvas; set => gamePlayCanvas = value; }
 
     public GameView()
     {
-        GamePlayCanvas = GameObject.Find("Canvas_GamePlay/Panel_Background");
-        SpinButton = GamePlayCanvas.transform.Find("Panel_UI/Button_Spin").GetComponent<Button>();
-        pauseButton = GamePlayCanvas.transform.Find("Button_Pause").GetComponent<Button>();
-        betLinesContainer = GamePlayCanvas.transform.Find("Panel_UI/BetLinesContainer").gameObject;
+        gamePlayCanvas = GameObject.Find("Canvas_GamePlay/Panel_Background");
+        SpinButton = gamePlayCanvas.transform.Find("Panel_UI/Button_Spin").GetComponent<Button>();
+        pauseButton = gamePlayCanvas.transform.Find("Button_Pause").GetComponent<Button>();
+        betLinesContainer = gamePlayCanvas.transform.Find("Panel_UI/BetLinesContainer").gameObject;
         increaseBetButton = betLinesContainer.transform.Find("Bet/Button_Plus").GetComponent<Button>();
         decreaseBetButton = betLinesContainer.transform.Find("Bet/Button_Minus").GetComponent<Button>();
         increaseLinesCountButton = betLinesContainer.transform.Find("Lines/Button_Plus").GetComponent<Button>();
         decreaseLinesCountButton = betLinesContainer.transform.Find("Lines/Button_Minus").GetComponent<Button>();
         betText = betLinesContainer.transform.Find("Bet/Text_ShowBet").GetComponent<TextMeshProUGUI>();
         linesCountText = betLinesContainer.transform.Find("Lines/Text_ShowLinesCount").GetComponent<TextMeshProUGUI>();
-        totalWinText = GamePlayCanvas.transform.Find("Panel_UI/TotalWin/Text_ShowTotalWin").GetComponent<TextMeshProUGUI>();
-
-        //GamePlayCanvas = GameObject.Find("Canvas_GamePlay");
+        totalWinText = gamePlayCanvas.transform.Find("Panel_UI/TotalWin/Text_ShowTotalWin").GetComponent<TextMeshProUGUI>();
 
         SpinButton.onClick.AddListener(Spin);
         pauseButton.onClick.AddListener(PauseButtonOnClick);
-        AddListener();
-        DisactivateGamePanel();
 
-    }
-
-    public void ActivateGamePanel()
-    {
-        GamePlayCanvas.SetActive(true);
-    }
-
-    public void DisactivateGamePanel()
-    {
-        GamePlayCanvas.SetActive(false);
-    }
-
-    private void Spin()
-    {
-        MainApp.instance.GameController.StartSpin();
-    }
-
-    public void Start()
-    {
-        //pauseButton = GameObject.Find("Canvas_GamePlay/Panel_Background/Button_Pause").gameObject.GetComponent<Button>();
-        //gamePanel = GameObject.Find("Canvas_GamePlay/Panel_Background");
-        //SpinButton = gamePanel.transform.Find("Panel_UI/Button_Spin").GetComponent<Button>();
-
-        // pausePopup = GameObject.Find("Canvas_Popups/PausePopup");
-        // panel = GameObject.Find("Canvas_GamePlay");
-        // pauseButton = panel.transform.Find("Panel_Background/Button_Pause").GetComponent<Button>();
-        // pauseButton.onClick.AddListener(InstantiatePausePopup);
-
-        // Debug.Log("Start in GameView");
-        // SpinButton.onClick.AddListener(MainApp.instance.GameController.StartSpin);
-
-        //MainApp.instance.GameController.GameView = this;
-        //AddListener();
-        //MainApp.instance.GameController.UpdateLinesCount();
-        Debug.Log("прикрепил ивент активировать панель паузы");
-
-    }
-
-    public void AddListener()
-    {
         increaseLinesCountButton.onClick.AddListener(() => 
         {
             MainApp.instance.GameController.IncreaseLinesCount();
@@ -114,17 +67,36 @@ public class GameView
             MainApp.instance.GameController.DecreaseBet();
             UpdateBet();
         });
+
+        DisactivateGamePanel();
+    }
+
+    public void ActivateGamePanel()
+    {
+        gamePlayCanvas.SetActive(true);
+    }
+
+    public void DisactivateGamePanel()
+    {
+        gamePlayCanvas.SetActive(false);
+    }
+
+    private void Spin()
+    {
+        MainApp.instance.GameController.StartSpin();
+    }
+
+    public void Start()
+    {
+
+        Debug.Log("прикрепил ивент активировать панель паузы");
+
     }
 
     public void PauseButtonOnClick()
     {
         MainApp.instance.PopupController.PausePopup.SetActivePausePopup();
     }
-
-    // public void RemoveListener()
-    // {
-    //     pauseButton.onClick.RemoveListener(popupController.InstantiatePausePopup);
-    // }
 
     public void UpdateLinesCount()
     {
@@ -138,6 +110,6 @@ public class GameView
 
     public void UpdateTotalWin()
     {
-        TotalWinText.text = MainApp.instance.GameController.SlotMachine.TotalWin.ToString();
+        totalWinText.text = MainApp.instance.GameController.SlotMachine.TotalWin.ToString();
     }
 }

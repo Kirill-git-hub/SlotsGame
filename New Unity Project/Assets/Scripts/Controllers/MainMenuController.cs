@@ -12,7 +12,6 @@ public class MainMenuController
 
     public MainMenuController()
     {
-        //mainMenuView = new MainMenuView();
         Debug.Log("Constructor in MeinMenuController");
         mainMenuView = new MainMenuView();
     }

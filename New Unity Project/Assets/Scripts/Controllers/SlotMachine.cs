@@ -85,12 +85,12 @@ public class SlotMachine
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
-        InstantiateReels();
-        totalWin = 0;
-        MainApp.instance.GameController.GameView.UpdateTotalWin();
-    }
+    // void Start()
+    // {
+    //     InstantiateReels();
+    //     totalWin = 0;
+    //     MainApp.instance.GameController.GameView.UpdateTotalWin();
+    // }
 
     // Update is called once per frame
     public void Update()
@@ -224,22 +224,11 @@ public class SlotMachine
         // ReelsList[0].CanSpin = true;
         // ReelsList[0].CanGetRndIndex = true;
         MainApp.instance.GameController.GameView.SpinButton.interactable = false;
-        timeLeft = 5f;
+        timeLeft = 3f;
     }
 
     public void StartRotating()
     {
-        // for (int i = 0; i < ReelsList.Count; i++)
-        // {
-        //     for (int j = 0; j < ReelsList[i].transform.childCount; j++)
-        //     {               
-        //         ReelsList[i].transform.GetChild(j).transform.Translate(Vector2.down * Time.deltaTime * ReelsList[i].Speed);
-        //     }
-        // }
-
-
-
-
         for (int i = 0; i < reelsObjList.Count; i++)
         {
             for (int j = 0; j < reelsObjList[i].transform.childCount; j++)
@@ -253,31 +242,6 @@ public class SlotMachine
 
     public void ChangeReelsOrder()
     {
-        // for (int i = 0; i < ReelsList.Count; i++)
-        // {
-        //     for (int j = 0; j < ReelsList[i].transform.childCount; j++)
-        //     {
-        //         if (ReelsList[i].transform.GetChild(0).transform.localPosition.y <= 
-        //             (-ReelPrefab.BlockRect.rect.height - (ReelPrefab.BlockRect.rect.width + ReelPrefab.Spacing)))
-        //         {
-        //             ReelsList[i].transform.GetChild(0).transform.localPosition = 
-        //                 ReelsList[i].transform.GetChild(1).transform.localPosition
-        //                 + new Vector3(0, reelPrefab.BlockRect.rect.height - reelPrefab.Spacing, 0);
-        //         }
-        //         else if (ReelsList[i].transform.GetChild(1).transform.localPosition.y <= 
-        //             (-ReelPrefab.BlockRect.rect.height - (ReelPrefab.BlockRect.rect.width + ReelPrefab.Spacing)))
-        //         {
-        //             ReelsList[i].transform.GetChild(1).transform.localPosition =
-        //                 ReelsList[i].transform.GetChild(0).transform.localPosition
-        //                 + new Vector3(0, reelPrefab.BlockRect.rect.height + reelPrefab.Spacing, 0);
-        //         }
-        //     }
-        // }
-
-
-
-
-
         for (int i = 0; i < reelsObjList.Count; i++)
         {
             for (int j = 0; j < reelsObjList[i].transform.childCount; j++)
@@ -302,33 +266,14 @@ public class SlotMachine
 
     public void InstantiateReels()
     {
-        // for (int i = 0; i < reelContainer.Length; i++)
-        // {
-        //     for (int j = 0; j < reelContainer[i].transform.childCount; j++)
-        //     {
-        //         Reel reel = Object.Instantiate(reelPrefab, reelContainer[i].transform.GetChild(j).transform);
-        //         ReelsList.Add(reel);
-        //     }
-        // }
-
-
-
-
-
-
         for (int i = 0; i < reelCont.Count; i++)
         { 
-            // GameObject reel = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ReelPrefab_1"), reelCont[i].transform);
-            // ReelsList.Add(reel);
-
             ReelsList.Add(new Reel(reelCont[i].transform));
-            //Debug.Log(ReelsList);
         }
 
         foreach (GameObject item in reelCont)
         {
             ReelsObjList.Add(item.transform.GetChild(0).gameObject);
-            //Debug.Log(ReelsObjList);
         }
     }
 
