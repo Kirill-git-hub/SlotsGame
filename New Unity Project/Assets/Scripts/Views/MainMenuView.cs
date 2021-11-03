@@ -1,39 +1,85 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MainMenuView : MonoBehaviour
+public class MainMenuView 
 {
-    [SerializeField] private Button startGameButton;
-    [SerializeField] private string gameScene = null;
+    private Button startGameButton;
+    [SerializeField] private GameObject mainMenuCanvas;
+
+
+    private bool isMainMenuActive;
 
     public Button StartGameButton { get => startGameButton; set => startGameButton = value; }
-    public string GameScene => gameScene;
+    public bool IsMainMenuActive { get => isMainMenuActive; set => isMainMenuActive = value; }
 
     // Start is called before the first frame update
-    void Start()
+    public MainMenuView()
     {
+        IsMainMenuActive = true;
+        mainMenuCanvas = GameObject.Find("Canvas_MainMenu");
+
         InitializeView();
     }
 
+    // public void Start()
+    // {
+
+    //     Debug.Log("Start in MainMenuView");
+    //     InitializeView();
+    // }
+
     public void InitializeView()
     {
-        MainApp.instance.MainMenuController.MainMenuView = this;
- 
-        StartGameButton.onClick.AddListener(InitializiGameScene);
+        
+        //MainApp.instance.MainMenuController.MainMenuView = this;
+        
+        //gamePlayCanvas.SetActive(!isMainMenuActive);
+        //StartGameButton.onClick.AddListener(SwitchPanels);
+        //StartGameButton.onClick.AddListener(MainApp.instance.InitializeGame);
+        //MainApp.instance.MainMenu.transform.Find("Canvas_MainMenu/Panel_Background/Button_Play").gameObject.GetComponent<Button>().onClick.AddListener(SwitchPanels);
+        startGameButton = GameObject.Find("Canvas_MainMenu/Panel_Background/Button_Play").gameObject.GetComponent<Button>();
+        startGameButton.onClick.AddListener(() =>
+        {
+            //MainApp.instance.InitializeGame();
+            SwitchPanels();
+        });
     }
 
-    public void InitializiGameScene()
+    //public void InitializeGameScene()
+    //{
+    //    MainApp.instance.GameController = new GameController();
+    //    //SceneManager.LoadScene(gameScene, LoadSceneMode.Additive);
+    //    RemoveListener();
+    //}
+
+    public void SwitchPanels()
     {
-        MainApp.instance.GameController = new GameController();
-        SceneManager.LoadScene(gameScene, LoadSceneMode.Additive);
-        RemoveListener();
+        DisactivateMainMenuPanel();
+        MainApp.instance.GameController.GameView.ActivateGamePanel();
+        //mainMenuCanvas.SetActive(!isMainMenuActive);
+        //gamePlayCanvas.SetActive(isMainMenuActive);      
     }
 
-    public void RemoveListener()
+    public void ActivateMainMenuPanel()
     {
-        StartGameButton.onClick.RemoveListener(InitializiGameScene);
+        mainMenuCanvas.SetActive(true);
     }
+
+    public void DisactivateMainMenuPanel()
+    {
+        mainMenuCanvas.SetActive(false);
+    }
+
+    // public void Init()
+    // {
+    //     MainApp.instance.GameController.SlotMachine.InstantiateReels();
+    // }
+
+    //public void RemoveListener()
+    //{
+    //    StartGameButton.onClick.RemoveListener(InitializeGameScene);
+    //}
 }
