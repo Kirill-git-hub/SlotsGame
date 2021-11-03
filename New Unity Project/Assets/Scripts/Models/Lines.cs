@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lines : MonoBehaviour
+public class Lines 
 {
     private int winItemCounter = 1;
     private ItemModel winItem = null;
@@ -95,6 +95,7 @@ public class Lines : MonoBehaviour
                                     MainApp.instance.GameController.SlotMachine.TotalWin +=
                                         ((MainApp.instance.GameController.SlotMachine.Bet[MainApp.instance.GameController.SlotMachine.BetIndex] / 
                                         MainApp.instance.GameController.SlotMachine.LinesCount) * (winItemCounter * winItem.Payout));
+                                        Debug.Log(MainApp.instance.GameController.SlotMachine.TotalWin);
                                 }
                             }
                         }
