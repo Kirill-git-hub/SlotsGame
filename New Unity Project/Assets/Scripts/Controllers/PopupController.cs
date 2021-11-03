@@ -4,45 +4,36 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PopupController : MonoBehaviour
+public class PopupController 
 {
-    public static PopupController instance = null;
+    private PausePopup pausePopup;
 
-    private void Awake()
+    public PausePopup PausePopup { get => pausePopup; set => pausePopup = value; }
+
+    public PopupController()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else if (instance == this)
-        {
-            Destroy(gameObject);
-        }
-
-        DontDestroyOnLoad(gameObject);
+        pausePopup = new PausePopup();
     }
 
-    [SerializeField] private PausePopup pausePopup = null;
-    [SerializeField] private RectTransform popupCanvas = null;
-
-    Popup activePopup;
 
     public void InstantiatePausePopup()
     {
-        MainApp.instance.GameController.GameView.RemoveListener();
-        Debug.Log("зашел в метод активировать панель паузы");
-        GameObject popupCopy = Instantiate(this.pausePopup.gameObject, popupCanvas);
-        PausePopup pausePopup = popupCopy.GetComponent<PausePopup>();
-        pausePopup.InstantiatePopup(DeactivateActivePopup, MainApp.instance.MainMenuController.MainMenuView.InitializeView);
-        popupCopy.SetActive(true);
-        activePopup = pausePopup;
+        //pausePopup.gameObject.SetActive(true);
+
+        //MainApp.instance.GameController.GameView.RemoveListener();
+        //Debug.Log("зашел в метод активировать панель паузы");
+        //GameObject popupCopy = Object.Instantiate(Resources.Load<GameObject>("Assets/Resources/Pause.prefab"), popupCanvas);
+        //PausePopup pausePopup = popupCopy.GetComponent<PausePopup>();
+        //pausePopup.InstantiatePopup(DeactivateActivePopup, MainApp.instance.MainMenuController.MainMenuView.InitializeView);
+        //popupCopy.SetActive(true);
+        //activePopup = pausePopup;
     }
 
-    public void DeactivateActivePopup()
-    {
-        activePopup.DeactivatePopup();
-        activePopup = null;
+    // public void DeactivateActivePopup()
+    // {
+    //     activePopup.DeactivatePopup();
+    //     activePopup = null;
 
-        MainApp.instance.GameController.GameView.AddListener();
-    }
+    //     MainApp.instance.GameController.GameView.AddListener();
+    // }
 }
