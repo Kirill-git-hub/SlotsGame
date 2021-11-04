@@ -18,12 +18,10 @@ public class GameView
     private Button pauseButton = null;
     private GameObject betLinesContainer;
 
-    public Button SpinButton { get => spinButton; set => spinButton = value; }
-
     public GameView()
     {
         gamePlayCanvas = GameObject.Find("Canvas_GamePlay/Panel_Background");
-        SpinButton = gamePlayCanvas.transform.Find("Panel_UI/Button_Spin").GetComponent<Button>();
+        spinButton = gamePlayCanvas.transform.Find("Panel_UI/Button_Spin").GetComponent<Button>();
         pauseButton = gamePlayCanvas.transform.Find("Button_Pause").GetComponent<Button>();
         betLinesContainer = gamePlayCanvas.transform.Find("Panel_UI/BetLinesContainer").gameObject;
         increaseBetButton = betLinesContainer.transform.Find("Bet/Button_Plus").GetComponent<Button>();
@@ -34,7 +32,7 @@ public class GameView
         linesCountText = betLinesContainer.transform.Find("Lines/Text_ShowLinesCount").GetComponent<TextMeshProUGUI>();
         totalWinText = gamePlayCanvas.transform.Find("Panel_UI/TotalWin/Text_ShowTotalWin").GetComponent<TextMeshProUGUI>();
 
-        SpinButton.onClick.AddListener(Spin);
+        spinButton.onClick.AddListener(Spin);
         pauseButton.onClick.AddListener(PauseButtonOnClick);
 
         increaseLinesCountButton.onClick.AddListener(() => 
@@ -79,13 +77,6 @@ public class GameView
         MainApp.instance.GameController.StartSpin();
     }
 
-    public void Start()
-    {
-
-        Debug.Log("прикрепил ивент активировать панель паузы");
-
-    }
-
     public void PauseButtonOnClick()
     {
         MainApp.instance.PopupController.PausePopup.SetActivePausePopup();
@@ -104,5 +95,14 @@ public class GameView
     public void UpdateTotalWin()
     {
         totalWinText.text = MainApp.instance.GameController.SlotMachine.TotalWin.ToString();
+    }
+
+    public void SetInteractable(bool isInteractable)
+    {
+        spinButton.interactable = isInteractable;
+        increaseBetButton.interactable = isInteractable; 
+        decreaseBetButton.interactable = isInteractable; 
+        increaseLinesCountButton.interactable = isInteractable;  
+        decreaseLinesCountButton.interactable = isInteractable;  
     }
 }
