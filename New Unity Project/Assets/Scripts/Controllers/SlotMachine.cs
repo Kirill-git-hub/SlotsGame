@@ -86,7 +86,7 @@ public class SlotMachine
 
             if (timeLeft <= 0)
             {
-                MainApp.instance.GameController.GameView.SpinButton.interactable = true;
+                SetButtonsInteractable(true);
 
                 for (int r = 0; r < ReelsList.Count; r++)
                 {
@@ -122,7 +122,6 @@ public class SlotMachine
             for (int i = 0; i < reelsContainer.Count; i++)
             {
                 ReelsList[i].Index = ReelsList[i].GetRandomIndexToStop();
-                //Debug.Log(ReelsList[i].Index);
             }
 
             Lines.FillResultArray();
@@ -135,7 +134,7 @@ public class SlotMachine
     {
         genericReel.CanGetRndIndex = true;
         genericReel.CanSpin = true;
-        MainApp.instance.GameController.GameView.SpinButton.interactable = false;
+        SetButtonsInteractable(false);
         timeLeft = 3f;
     }
 
@@ -187,5 +186,10 @@ public class SlotMachine
         {
             ReelsObjList.Add(item.transform.GetChild(0).gameObject);
         }
+    }
+
+    public void SetButtonsInteractable(bool interactable)
+    {
+        MainApp.instance.GameController.GameView.SetInteractable(interactable);
     }
 }
