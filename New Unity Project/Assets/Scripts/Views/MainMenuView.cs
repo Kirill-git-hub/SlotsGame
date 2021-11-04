@@ -10,27 +10,14 @@ public class MainMenuView
     private GameObject mainMenuCanvas;
     private bool isMainMenuActive;
 
-    public bool IsMainMenuActive { get => isMainMenuActive; set => isMainMenuActive = value; }
-
     // Start is called before the first frame update
     public MainMenuView()
     {
-        IsMainMenuActive = true;
+        isMainMenuActive = true;
+
         mainMenuCanvas = GameObject.Find("Canvas_MainMenu");
+        startGameButton = mainMenuCanvas.transform.Find("Panel_Background/Button_Play").gameObject.GetComponent<Button>();
 
-        InitializeView();
-    }
-
-    // public void Start()
-    // {
-
-    //     Debug.Log("Start in MainMenuView");
-    //     InitializeView();
-    // }
-
-    public void InitializeView()
-    {
-        startGameButton = GameObject.Find("Canvas_MainMenu/Panel_Background/Button_Play").gameObject.GetComponent<Button>();
         startGameButton.onClick.AddListener(() =>
         {
             SwitchPanels();
@@ -45,11 +32,11 @@ public class MainMenuView
 
     public void ActivateMainMenuPanel()
     {
-        mainMenuCanvas.SetActive(true);
+        mainMenuCanvas.SetActive(isMainMenuActive);
     }
 
     public void DisactivateMainMenuPanel()
     {
-        mainMenuCanvas.SetActive(false);
+        mainMenuCanvas.SetActive(!isMainMenuActive);
     }
 }
