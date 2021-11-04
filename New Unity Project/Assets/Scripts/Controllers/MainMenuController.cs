@@ -12,14 +12,6 @@ public class MainMenuController
 
     public MainMenuController()
     {
-        Debug.Log("Constructor in MeinMenuController");
         mainMenuView = new MainMenuView();
-    }
-
-    public void Start()
-    {
-        Debug.Log("Start in MeinMenuController");
-        //mainMenuView = new MainMenuView();
-        //MainMenuView.Start();
     }
 }
