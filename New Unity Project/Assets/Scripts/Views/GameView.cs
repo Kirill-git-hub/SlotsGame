@@ -6,7 +6,6 @@ using TMPro;
 
 public class GameView 
 {
-    private PopupController popupController;
     private GameObject gamePlayCanvas;
     private Button spinButton = null;
     private Button increaseBetButton = null;
@@ -16,16 +15,10 @@ public class GameView
     private TextMeshProUGUI betText = null;
     private TextMeshProUGUI linesCountText = null;
     private TextMeshProUGUI totalWinText = null;
-
     private Button pauseButton = null;
-    private GameObject pausePopup = null;
-    private GameObject panel = null;
-    private GameObject gamePanel = null;
     private GameObject betLinesContainer;
 
     public Button SpinButton { get => spinButton; set => spinButton = value; }
-    public TextMeshProUGUI LinesCountText { get => linesCountText; set => linesCountText = value; }
-    public TextMeshProUGUI BetText { get => betText; set => betText = value; }
 
     public GameView()
     {
@@ -100,12 +93,12 @@ public class GameView
 
     public void UpdateLinesCount()
     {
-        LinesCountText.text = MainApp.instance.GameController.SlotMachine.LinesCount.ToString();
+        linesCountText.text = MainApp.instance.GameController.SlotMachine.LinesCount.ToString();
     }
 
     public void UpdateBet()
     {
-        BetText.text = MainApp.instance.GameController.SlotMachine.Bet[MainApp.instance.GameController.SlotMachine.BetIndex].ToString();
+        betText.text = MainApp.instance.GameController.SlotMachine.Bet[MainApp.instance.GameController.SlotMachine.BetIndex].ToString();
     }
 
     public void UpdateTotalWin()
