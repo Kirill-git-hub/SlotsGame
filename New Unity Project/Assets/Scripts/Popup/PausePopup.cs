@@ -32,9 +32,4 @@ public class PausePopup : Popup
     {
         pausePopupPanel.SetActive(isActivePopup);
     }
-
-    // public void ClearReel()
-    // {
-    //     MainApp.instance.GameController.SlotMachine.ClearReels();
-    // }
 }
