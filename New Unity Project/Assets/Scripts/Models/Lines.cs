@@ -58,7 +58,7 @@ public class Lines
     {
         for (int lines = 0; lines < MainApp.instance.GameController.SlotMachine.LinesCount; lines++)
         {
-            //Debug.Log("линия - " + lines);
+            Debug.Log("линия - " + lines);
             int winIndex;
             winItemCounter = 1;
             winItem = null;
@@ -70,6 +70,7 @@ public class Lines
                 if (isCorrectItem)
                 {
                     winIndex = generatedIndexes[reel] - linesToCheck[lines][reel];
+                    Debug.Log(winIndex);
 
                     if (reel == 0)
                     {
@@ -103,7 +104,7 @@ public class Lines
                 }
             }
 
-            //Debug.Log(winItemCounter);
+            Debug.Log(winItemCounter);
         }
     }
 }
