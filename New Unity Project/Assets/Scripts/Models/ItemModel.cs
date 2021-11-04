@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemModel 
+public class ItemModel
 {
     private ItemType itemType;
     private float payout;

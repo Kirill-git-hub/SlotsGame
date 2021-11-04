@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MainMenuView 
+public class MainMenuView
 {
     private Button startGameButton;
     private GameObject mainMenuCanvas;
@@ -27,7 +27,7 @@ public class MainMenuView
     public void SwitchPanels()
     {
         DisactivateMainMenuPanel();
-        MainApp.instance.GameController.GameView.ActivateGamePanel();    
+        MainApp.instance.GameController.GameView.ActivateGamePanel();
     }
 
     public void ActivateMainMenuPanel()

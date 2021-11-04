@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class GameView 
+public class GameView
 {
     private GameObject gamePlayCanvas;
     private Button spinButton = null;
@@ -35,25 +35,25 @@ public class GameView
         spinButton.onClick.AddListener(Spin);
         pauseButton.onClick.AddListener(PauseButtonOnClick);
 
-        increaseLinesCountButton.onClick.AddListener(() => 
+        increaseLinesCountButton.onClick.AddListener(() =>
         {
             MainApp.instance.GameController.IncreaseLinesCount();
             UpdateLinesCount();
         });
 
-        decreaseLinesCountButton.onClick.AddListener(() => 
+        decreaseLinesCountButton.onClick.AddListener(() =>
         {
             MainApp.instance.GameController.DecreaseLinesCount();
             UpdateLinesCount();
         });
 
-        increaseBetButton.onClick.AddListener(() => 
+        increaseBetButton.onClick.AddListener(() =>
         {
             MainApp.instance.GameController.IncreaseBet();
             UpdateBet();
         });
 
-        decreaseBetButton.onClick.AddListener(() => 
+        decreaseBetButton.onClick.AddListener(() =>
         {
             MainApp.instance.GameController.DecreaseBet();
             UpdateBet();
@@ -100,9 +100,9 @@ public class GameView
     public void SetInteractable(bool isInteractable)
     {
         spinButton.interactable = isInteractable;
-        increaseBetButton.interactable = isInteractable; 
-        decreaseBetButton.interactable = isInteractable; 
-        increaseLinesCountButton.interactable = isInteractable;  
-        decreaseLinesCountButton.interactable = isInteractable;  
+        increaseBetButton.interactable = isInteractable;
+        decreaseBetButton.interactable = isInteractable;
+        increaseLinesCountButton.interactable = isInteractable;
+        decreaseLinesCountButton.interactable = isInteractable;
     }
 }

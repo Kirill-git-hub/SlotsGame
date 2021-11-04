@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlotMachine 
+public class SlotMachine
 {
     Reel genericReel = new Reel();
     private List<GameObject> reelsContainer = new List<GameObject>();
@@ -15,7 +15,7 @@ public class SlotMachine
     private const int MinBetIndex = 0;
     private const int MaxBetIndex = 5;
     private float timeLeft;
-    private float[] bet = { 1, 2, 5, 10, 25, 50};
+    private float[] bet = { 1, 2, 5, 10, 25, 50 };
     private int betIndex = MinBetIndex;
     private float linesCount = MinLinesCount;
     private float totalWin = 0f;
@@ -66,18 +66,18 @@ public class SlotMachine
     {
         for (int i = 0; i < SlotMachineObj.transform.childCount; i++)
         {
-            Transform container = SlotMachineObj.transform.GetChild(i).transform; 
+            Transform container = SlotMachineObj.transform.GetChild(i).transform;
 
             for (int j = 0; j < SlotMachineObj.transform.GetChild(i).childCount; j++)
             {
-                reelsContainer.Add(container.GetChild(j).gameObject); 
+                reelsContainer.Add(container.GetChild(j).gameObject);
             }
         }
     }
 
     // Update is called once per frame
     public void Update()
-    {     
+    {
         if (genericReel.CanSpin)
         {
             StartRotating();
@@ -94,26 +94,26 @@ public class SlotMachine
 
                     if (ReelsList[r].Index >= 2 && ReelsList[r].Index <= 49)
                     {
-                         reelsObjList[r].transform.GetChild(0).transform.localPosition = new Vector3
-                             (0, ReelsList[r].Index * (-(ReelsList[r].Width + ReelsList[r].Spacing)), 0);
+                        reelsObjList[r].transform.GetChild(0).transform.localPosition = new Vector3
+                        (0, ReelsList[r].Index * (-(ReelsList[r].Width + ReelsList[r].Spacing)), 0);
 
-                        reelsObjList[r].transform.GetChild(1).transform.localPosition = 
-                            reelsObjList[r].transform.GetChild(0).transform.localPosition +
-                            new Vector3(0, ReelsList[r].Height, 0);                   
+                        reelsObjList[r].transform.GetChild(1).transform.localPosition =
+                        reelsObjList[r].transform.GetChild(0).transform.localPosition +
+                        new Vector3(0, ReelsList[r].Height, 0);
                     }
                     else if (ReelsList[r].Index >= 50 && ReelsList[r].Index <= 99)
                     {
-                         reelsObjList[r].transform.GetChild(1).transform.localPosition = new Vector3
-                             (0, (ReelsList[r].Index -50) * -(ReelsList[r].Width + ReelsList[r].Spacing), 0);
+                        reelsObjList[r].transform.GetChild(1).transform.localPosition = new Vector3
+                        (0, (ReelsList[r].Index - 50) * -(ReelsList[r].Width + ReelsList[r].Spacing), 0);
 
-                        reelsObjList[r].transform.GetChild(0).transform.localPosition = 
-                            reelsObjList[r].transform.GetChild(1).transform.localPosition -
-                            new Vector3(0, ReelsList[r].Height, 0);
+                        reelsObjList[r].transform.GetChild(0).transform.localPosition =
+                        reelsObjList[r].transform.GetChild(1).transform.localPosition -
+                        new Vector3(0, ReelsList[r].Height, 0);
                     }
                 }
 
-                 Lines.CheckLines(Lines.ResultArray, Lines.PayLines);
-                 MainApp.instance.GameController.GameView.UpdateTotalWin();
+                Lines.CheckLines(Lines.ResultArray, Lines.PayLines);
+                MainApp.instance.GameController.GameView.UpdateTotalWin();
             }
         }
 
@@ -143,7 +143,7 @@ public class SlotMachine
         for (int i = 0; i < reelsObjList.Count; i++)
         {
             for (int j = 0; j < reelsObjList[i].transform.childCount; j++)
-            {               
+            {
                 reelsObjList[i].transform.GetChild(j).transform.Translate(Vector2.down * Time.deltaTime * ReelsList[i].ReelSpeed);
             }
         }
@@ -157,19 +157,19 @@ public class SlotMachine
         {
             for (int j = 0; j < reelsObjList[i].transform.childCount; j++)
             {
-                if (reelsObjList[i].transform.GetChild(0).transform.localPosition.y <= 
-                    (-ReelsList[i].Height - (ReelsList[i].Width + ReelsList[i].Spacing)))
+                if (reelsObjList[i].transform.GetChild(0).transform.localPosition.y <=
+                (-ReelsList[i].Height - (ReelsList[i].Width + ReelsList[i].Spacing)))
                 {
-                    reelsObjList[i].transform.GetChild(0).transform.localPosition = 
-                        reelsObjList[i].transform.GetChild(1).transform.localPosition
-                        + new Vector3(0, ReelsList[i].Height - ReelsList[i].Spacing, 0);
+                    reelsObjList[i].transform.GetChild(0).transform.localPosition =
+                    reelsObjList[i].transform.GetChild(1).transform.localPosition
+                    + new Vector3(0, ReelsList[i].Height - ReelsList[i].Spacing, 0);
                 }
-                else if (reelsObjList[i].transform.GetChild(1).transform.localPosition.y <= 
-                    (-ReelsList[i].Height - (ReelsList[i].Width + ReelsList[i].Spacing)))
+                else if (reelsObjList[i].transform.GetChild(1).transform.localPosition.y <=
+                (-ReelsList[i].Height - (ReelsList[i].Width + ReelsList[i].Spacing)))
                 {
                     reelsObjList[i].transform.GetChild(1).transform.localPosition =
-                        reelsObjList[i].transform.GetChild(0).transform.localPosition
-                        + new Vector3(0, ReelsList[i].Height + ReelsList[i].Spacing, 0);
+                    reelsObjList[i].transform.GetChild(0).transform.localPosition
+                    + new Vector3(0, ReelsList[i].Height + ReelsList[i].Spacing, 0);
                 }
             }
         }
@@ -178,7 +178,7 @@ public class SlotMachine
     public void InstantiateReels()
     {
         for (int i = 0; i < reelsContainer.Count; i++)
-        { 
+        {
             ReelsList.Add(new Reel(reelsContainer[i].transform));
         }
 

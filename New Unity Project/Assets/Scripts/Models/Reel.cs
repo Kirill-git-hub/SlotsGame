@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Reel 
+public class Reel
 {
     private static bool canSpin = false;
     private static float reelSpeed = 450f;
@@ -21,20 +21,20 @@ public class Reel
     public bool CanSpin { get => canSpin; set => canSpin = value; }
     public float ReelSpeed => reelSpeed;
     public List<ItemModel> ItemsList { get => itemsList; set => itemsList = value; }
-    public float Height => height; 
-    public float Width => width; 
+    public float Height => height;
+    public float Width => width;
     public int Index { get => index; set => index = value; }
     public float Spacing => spacing;
     public bool CanGetRndIndex { get => canGetRndIndex; set => canGetRndIndex = value; }
 
-    public Reel(){}
+    public Reel() { }
     public Reel(Transform parentTransform)
     {
         GameObject reel = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ReelPrefab_1"), parentTransform);
         LoadSprites();
         GetItems(reel);
         SetItems();
-        
+
         CanSpin = false;
     }
 
@@ -45,27 +45,27 @@ public class Reel
 
     public void SetItems()
     {
-        for(int i = 0; i < itemsObj.Count; i++)
+        for (int i = 0; i < itemsObj.Count; i++)
         {
-            for(int j = 0; j < itemsObj[i].transform.childCount; j++)
+            for (int j = 0; j < itemsObj[i].transform.childCount; j++)
             {
                 Image image = itemsObj[i].transform.GetChild(j).GetComponent<Image>();
                 Sprite rndSprite = sprites[Random.Range(0, sprites.Length)];
                 ItemModel itemModel = new ItemModel(image, rndSprite, rndSprite.name);
                 ItemsList.Add(itemModel);
             }
-        } 
+        }
     }
 
     public void GetItems(GameObject reel)
     {
-        for(int i = 0; i < reel.transform.childCount; i++)
+        for (int i = 0; i < reel.transform.childCount; i++)
         {
-            for(int j = 0; j < reel.transform.GetChild(i).childCount; j++)
+            for (int j = 0; j < reel.transform.GetChild(i).childCount; j++)
             {
                 itemsObj.Add(reel.transform.GetChild(i).GetChild(j).gameObject);
             }
-        } 
+        }
     }
 
     public int GetRandomIndexToStop()

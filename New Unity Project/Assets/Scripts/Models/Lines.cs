@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lines 
+public class Lines
 {
     private int winItemCounter = 1;
     private ItemModel winItem = null;
@@ -36,21 +36,21 @@ public class Lines
         new int []{ 0, 2, 0, 2, 0 }, // 22
         new int []{ 2, 0, 2, 0, 2 }, // 23
         new int []{ 1, 0, 2, 0, 1 }, // 24
-    };  
+    };
 
-    public int[] ResultArray => resultArray; 
-    public int[][] PayLines => payLines; 
+    public int[] ResultArray => resultArray;
+    public int[][] PayLines => payLines;
 
     public void FillResultArray()
     {
-        for(int i = 0; i < ResultArray.Length; i++)
+        for (int i = 0; i < ResultArray.Length; i++)
         {
             ResultArray[i] = MainApp.instance.GameController.SlotMachine.ReelsList[i].Index;
         }
 
         for (int i = 0; i < ResultArray.Length; i++)
-        {            
-            Debug.Log(ResultArray[i]);            
+        {
+            Debug.Log(ResultArray[i]);
         }
     }
 
@@ -94,13 +94,13 @@ public class Lines
                                 if (winItemCounter >= 2)
                                 {
                                     MainApp.instance.GameController.SlotMachine.TotalWin +=
-                                        ((MainApp.instance.GameController.SlotMachine.Bet[MainApp.instance.GameController.SlotMachine.BetIndex] / 
+                                        ((MainApp.instance.GameController.SlotMachine.Bet[MainApp.instance.GameController.SlotMachine.BetIndex] /
                                         MainApp.instance.GameController.SlotMachine.LinesCount) * (winItemCounter * winItem.Payout));
-                                        Debug.Log(MainApp.instance.GameController.SlotMachine.TotalWin);
+                                    Debug.Log(MainApp.instance.GameController.SlotMachine.TotalWin);
                                 }
                             }
                         }
-                    }                   
+                    }
                 }
             }
 

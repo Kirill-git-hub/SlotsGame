@@ -18,7 +18,7 @@ public class PausePopup : Popup
         continueButton = pausePopupPanel.transform.Find("Panel_Pause/ButtonsContainer/Button_ContinueGame").GetComponent<Button>();
 
         continueButton.onClick.AddListener(() => DisactivatePopup(pausePopupPanel));
-        exitButton.onClick.AddListener(() => 
+        exitButton.onClick.AddListener(() =>
         {
             DisactivatePopup(pausePopupPanel);
             MainApp.instance.GameController.GameView.DisactivateGamePanel();

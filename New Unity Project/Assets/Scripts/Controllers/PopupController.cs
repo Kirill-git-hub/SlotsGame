@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PopupController 
+public class PopupController
 {
     private PausePopup pausePopup;
-    
+
     public PausePopup PausePopup { get => pausePopup; set => pausePopup = value; }
 
     public PopupController()

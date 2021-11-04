@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameController 
+public class GameController
 {
     private GameView gameView;
     private SlotMachine slotMachine;

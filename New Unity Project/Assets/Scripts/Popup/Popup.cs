@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Popup 
+public class Popup
 {
     protected bool isActivePopup = true;
 

@@ -16,16 +16,16 @@ public class MainApp : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
-       {
-           instance = this;
-       }
-       else if (instance == this)
-       {
-           Destroy(gameObject);
-       }
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance == this)
+        {
+            Destroy(gameObject);
+        }
 
-       DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
 
         PopupController = new PopupController();
         GameController = new GameController();
