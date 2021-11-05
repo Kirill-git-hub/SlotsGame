@@ -84,6 +84,13 @@ public class Lines
                             {
                                 winItem = curentWinItem;
                                 winItemCounter++;
+
+                                if(winItemCounter == 5)
+                                {
+                                    MainApp.instance.GameController.SlotMachine.TotalWin +=
+                                    ((MainApp.instance.GameController.SlotMachine.Bet[MainApp.instance.GameController.SlotMachine.BetIndex] /
+                                    MainApp.instance.GameController.SlotMachine.LinesCount) * (winItemCounter * winItem.Payout));
+                                }
                             }
                             else
                             {
@@ -100,7 +107,6 @@ public class Lines
                     }
                 }
             }
-
         }
     }
 }
