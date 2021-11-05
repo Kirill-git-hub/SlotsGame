@@ -92,22 +92,22 @@ public class SlotMachine
                 {
                     ReelsList[r].CanSpin = false;
 
-                    if (ReelsList[r].Index >= 2 && ReelsList[r].Index <= 49)
+                    if (ReelsList[r].Index >= 0 && ReelsList[r].Index <= 49)
                     {
                         reelsObjList[r].transform.GetChild(0).transform.localPosition = new Vector3
-                        (0, ReelsList[r].Index * (-(ReelsList[r].Width + ReelsList[r].Spacing)), 0);
+                        (0, ReelsList[r].Index * ((ReelsList[r].Width + ReelsList[r].Spacing)), 0);
 
                         reelsObjList[r].transform.GetChild(1).transform.localPosition =
-                        reelsObjList[r].transform.GetChild(0).transform.localPosition +
+                        reelsObjList[r].transform.GetChild(0).transform.localPosition -
                         new Vector3(0, ReelsList[r].Height, 0);
                     }
-                    else if (ReelsList[r].Index >= 50 && ReelsList[r].Index <= 99)
+                    else if (ReelsList[r].Index >= 50 && ReelsList[r].Index <= 97)
                     {
                         reelsObjList[r].transform.GetChild(1).transform.localPosition = new Vector3
-                        (0, (ReelsList[r].Index - 50) * -(ReelsList[r].Width + ReelsList[r].Spacing), 0);
+                        (0, (ReelsList[r].Index - 50) * ((ReelsList[r].Width + ReelsList[r].Spacing)), 0);
 
                         reelsObjList[r].transform.GetChild(0).transform.localPosition =
-                        reelsObjList[r].transform.GetChild(1).transform.localPosition -
+                        reelsObjList[r].transform.GetChild(1).transform.localPosition +
                         new Vector3(0, ReelsList[r].Height, 0);
                     }
                 }
@@ -119,7 +119,7 @@ public class SlotMachine
 
         if (genericReel.CanGetRndIndex)
         {
-            for (int i = 0; i < reelsContainer.Count; i++)
+            for (int i = 0; i < reelsList.Count; i++)
             {
                 ReelsList[i].Index = ReelsList[i].GetRandomIndexToStop();
             }
@@ -135,7 +135,7 @@ public class SlotMachine
         genericReel.CanGetRndIndex = true;
         genericReel.CanSpin = true;
         SetButtonsInteractable(false);
-        timeLeft = 3f;
+        timeLeft = 3f; 
     }
 
     public void StartRotating()
