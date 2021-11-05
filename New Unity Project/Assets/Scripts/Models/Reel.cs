@@ -30,7 +30,7 @@ public class Reel
     public Reel() { }
     public Reel(Transform parentTransform)
     {
-        GameObject reel = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ReelPrefab_1"), parentTransform);
+        GameObject reel = MonoBehaviour.Instantiate(Resources.Load<GameObject>("ReelPrefab"), parentTransform);
         LoadSprites();
         GetItems(reel);
         SetItems();
@@ -70,7 +70,7 @@ public class Reel
 
     public int GetRandomIndexToStop()
     {
-        int rndItem = Random.Range(2, ItemsList.Count);
+        int rndItem = Random.Range(0, ItemsList.Count - 2);
         return rndItem;
     }
 }
