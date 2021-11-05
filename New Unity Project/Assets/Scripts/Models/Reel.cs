@@ -10,7 +10,6 @@ public class Reel
 
     private List<ItemModel> itemsList = new List<ItemModel>();
     private List<GameObject> itemsObj = new List<GameObject>();
-    private List<Sprite> spritesList = new List<Sprite>();
     private Sprite[] sprites = new Sprite[5];
     private float height = 10490f;
     private float width = 190f;
