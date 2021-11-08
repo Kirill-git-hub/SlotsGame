@@ -16,6 +16,11 @@ public class GameController
         GameView = new GameView();
     }
 
+    public void Update()
+    {
+        SlotMachine.Update();
+    }
+
     public void StartSpin()
     {
         SlotMachine.CanRotate();

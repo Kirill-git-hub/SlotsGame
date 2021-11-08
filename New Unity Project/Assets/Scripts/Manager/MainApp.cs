@@ -34,6 +34,6 @@ public class MainApp : MonoBehaviour
 
     private void Update()
     {
-        MainApp.instance.GameController.SlotMachine.Update();
+        GameController.Update();
     }
 }
